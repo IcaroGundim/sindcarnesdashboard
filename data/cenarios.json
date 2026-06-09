@@ -1,0 +1,25 @@
+{
+  "baseline_2025": {
+    "abates": 664435,
+    "export": 378708,
+    "evasion_pct": 36.3
+  },
+  "scenarios_2030": {
+    "status_quo": {
+      "export": 206997,
+      "abates": 253525,
+      "evasion_pct": 44.9
+    },
+    "pessimista": {
+      "export": 294043,
+      "abates": 241339,
+      "evasion_pct": 54.9
+    },
+    "otimista": {
+      "export": 129970,
+      "abates": 279375,
+      "evasion_pct": 31.8
+    }
+  },
+  "estimated_saturation_year": 2034
+}

@@ -1,0 +1,830 @@
+{
+  "n_sims": 8000,
+  "seed": 20300101,
+  "fatores": [
+    {
+      "fator": "propensao_exportar",
+      "label": "Propensão a exportar"
+    },
+    {
+      "fator": "taxa_desfrute",
+      "label": "Taxa de desfrute"
+    },
+    {
+      "fator": "capacidade_cagr",
+      "label": "Crescimento da capacidade"
+    },
+    {
+      "fator": "taxa_natal",
+      "label": "Taxa de natalidade"
+    },
+    {
+      "fator": "preco_relativo",
+      "label": "Preço relativo AC vs MT/RO/SP"
+    }
+  ],
+  "correlacoes": [
+    {
+      "a": "Propensão a exportar",
+      "b": "Preço relativo AC vs MT/RO/SP",
+      "valor": 0.6
+    },
+    {
+      "a": "Propensão a exportar",
+      "b": "Taxa de desfrute",
+      "valor": 0.3
+    },
+    {
+      "a": "Propensão a exportar",
+      "b": "Crescimento da capacidade",
+      "valor": -0.3
+    },
+    {
+      "a": "Taxa de desfrute",
+      "b": "Preço relativo AC vs MT/RO/SP",
+      "valor": 0.2
+    }
+  ],
+  "cenarios": {
+    "continuidade": {
+      "nome": "Continuidade",
+      "percentis_2030": {
+        "evasao": {
+          "p10": 33.16,
+          "p25": 37.23,
+          "mediana": 41.89,
+          "p75": 46.86,
+          "p90": 51.39
+        },
+        "abates": {
+          "p10": 537179.5,
+          "p25": 586291.0,
+          "mediana": 644903.0,
+          "p75": 701751.75,
+          "p90": 752323.2
+        },
+        "export": {
+          "p10": 356901.7,
+          "p25": 408357.25,
+          "mediana": 464987.5,
+          "p75": 529107.0,
+          "p90": 589261.0
+        },
+        "utilizacao": {
+          "p10": 66.81,
+          "p25": 73.18,
+          "mediana": 80.67,
+          "p75": 88.22,
+          "p90": 95.2
+        },
+        "empregos_risco": {
+          "p10": 0.0,
+          "p25": 0.0,
+          "mediana": 89.0,
+          "p75": 354.0,
+          "p90": 577.1
+        }
+      },
+      "riscos": {
+        "evasao_acima_50": 0.137,
+        "export_supera_abate": 0.137,
+        "utilizacao_abaixo_60": 0.023,
+        "abates_abaixo_500k": 0.04
+      },
+      "tornado": [
+        {
+          "fator": "propensao_exportar",
+          "correlacao": 0.99,
+          "label": "Propensão a exportar"
+        },
+        {
+          "fator": "preco_relativo",
+          "correlacao": 0.74,
+          "label": "Preço relativo AC vs MT/RO/SP"
+        },
+        {
+          "fator": "taxa_desfrute",
+          "correlacao": 0.31,
+          "label": "Taxa de desfrute"
+        },
+        {
+          "fator": "capacidade_cagr",
+          "correlacao": -0.27,
+          "label": "Crescimento da capacidade"
+        },
+        {
+          "fator": "taxa_natal",
+          "correlacao": 0.03,
+          "label": "Taxa de natalidade"
+        }
+      ],
+      "fan": [
+        {
+          "ano": 2026,
+          "evasao": {
+            "p10": 35.58,
+            "p25": 36.45,
+            "mediana": 37.4,
+            "p75": 38.41,
+            "p90": 39.32
+          },
+          "export": {
+            "p10": 369872.9,
+            "p25": 380218.25,
+            "mediana": 391589.0,
+            "p75": 403273.5,
+            "p90": 413932.9
+          },
+          "abates": {
+            "p10": 635884.3,
+            "p25": 644619.0,
+            "mediana": 655031.5,
+            "p75": 665112.0,
+            "p90": 673656.8
+          }
+        },
+        {
+          "ano": 2027,
+          "evasao": {
+            "p10": 34.85,
+            "p25": 36.59,
+            "mediana": 38.51,
+            "p75": 40.52,
+            "p90": 42.33
+          },
+          "export": {
+            "p10": 365855.5,
+            "p25": 386766.25,
+            "mediana": 409647.0,
+            "p75": 433602.0,
+            "p90": 456332.3
+          },
+          "abates": {
+            "p10": 613560.5,
+            "p25": 632208.75,
+            "mediana": 653901.5,
+            "p75": 675109.25,
+            "p90": 693695.0
+          }
+        },
+        {
+          "ano": 2028,
+          "evasao": {
+            "p10": 34.17,
+            "p25": 36.75,
+            "mediana": 39.61,
+            "p75": 42.63,
+            "p90": 45.35
+          },
+          "export": {
+            "p10": 362030.7,
+            "p25": 393504.0,
+            "mediana": 427593.0,
+            "p75": 464955.0,
+            "p90": 500194.4
+          },
+          "abates": {
+            "p10": 588947.0,
+            "p25": 618146.25,
+            "mediana": 651867.0,
+            "p75": 684795.0,
+            "p90": 715513.5
+          }
+        },
+        {
+          "ano": 2029,
+          "evasao": {
+            "p10": 33.6,
+            "p25": 36.96,
+            "mediana": 40.74,
+            "p75": 44.74,
+            "p90": 48.37
+          },
+          "export": {
+            "p10": 359394.9,
+            "p25": 400680.25,
+            "mediana": 446200.0,
+            "p75": 496649.25,
+            "p90": 544694.3
+          },
+          "abates": {
+            "p10": 563521.1,
+            "p25": 602485.75,
+            "mediana": 648964.5,
+            "p75": 694182.5,
+            "p90": 734431.9
+          }
+        },
+        {
+          "ano": 2030,
+          "evasao": {
+            "p10": 33.16,
+            "p25": 37.23,
+            "mediana": 41.89,
+            "p75": 46.86,
+            "p90": 51.39
+          },
+          "export": {
+            "p10": 356901.7,
+            "p25": 408357.25,
+            "mediana": 464987.5,
+            "p75": 529107.0,
+            "p90": 589261.0
+          },
+          "abates": {
+            "p10": 537179.5,
+            "p25": 586291.0,
+            "mediana": 644903.0,
+            "p75": 701751.75,
+            "p90": 752323.2
+          }
+        }
+      ]
+    },
+    "retencao_moderada": {
+      "nome": "Retenção moderada",
+      "percentis_2030": {
+        "evasao": {
+          "p10": 23.29,
+          "p25": 27.61,
+          "mediana": 32.15,
+          "p75": 36.94,
+          "p90": 41.52
+        },
+        "abates": {
+          "p10": 624735.6,
+          "p25": 675071.5,
+          "mediana": 732685.5,
+          "p75": 791231.0,
+          "p90": 839302.2
+        },
+        "export": {
+          "p10": 243022.9,
+          "p25": 293165.0,
+          "mediana": 346813.5,
+          "p75": 405903.25,
+          "p90": 461622.5
+        },
+        "utilizacao": {
+          "p10": 70.38,
+          "p25": 76.33,
+          "mediana": 83.15,
+          "p75": 90.43,
+          "p90": 97.07
+        },
+        "empregos_risco": {
+          "p10": 0.0,
+          "p25": 0.0,
+          "mediana": 0.0,
+          "p75": 0.0,
+          "p90": 180.0
+        }
+      },
+      "riscos": {
+        "evasao_acima_50": 0.008,
+        "export_supera_abate": 0.008,
+        "utilizacao_abaixo_60": 0.007,
+        "abates_abaixo_500k": 0.002
+      },
+      "tornado": [
+        {
+          "fator": "propensao_exportar",
+          "correlacao": 0.99,
+          "label": "Propensão a exportar"
+        },
+        {
+          "fator": "preco_relativo",
+          "correlacao": 0.75,
+          "label": "Preço relativo AC vs MT/RO/SP"
+        },
+        {
+          "fator": "taxa_desfrute",
+          "correlacao": 0.31,
+          "label": "Taxa de desfrute"
+        },
+        {
+          "fator": "capacidade_cagr",
+          "correlacao": -0.28,
+          "label": "Crescimento da capacidade"
+        },
+        {
+          "fator": "taxa_natal",
+          "correlacao": 0.04,
+          "label": "Taxa de natalidade"
+        }
+      ],
+      "fan": [
+        {
+          "ano": 2026,
+          "evasao": {
+            "p10": 33.6,
+            "p25": 34.48,
+            "mediana": 35.44,
+            "p75": 36.42,
+            "p90": 37.34
+          },
+          "export": {
+            "p10": 345680.6,
+            "p25": 356229.5,
+            "mediana": 367140.0,
+            "p75": 378551.5,
+            "p90": 389511.0
+          },
+          "abates": {
+            "p10": 649801.6,
+            "p25": 658823.75,
+            "mediana": 668987.0,
+            "p75": 678800.0,
+            "p90": 687944.5
+          }
+        },
+        {
+          "ano": 2027,
+          "evasao": {
+            "p10": 30.89,
+            "p25": 32.67,
+            "mediana": 34.58,
+            "p75": 36.54,
+            "p90": 38.38
+          },
+          "export": {
+            "p10": 318559.9,
+            "p25": 339471.75,
+            "mediana": 361494.0,
+            "p75": 384717.0,
+            "p90": 406450.2
+          },
+          "abates": {
+            "p10": 643885.5,
+            "p25": 662416.5,
+            "mediana": 683587.0,
+            "p75": 704766.0,
+            "p90": 724172.9
+          }
+        },
+        {
+          "ano": 2028,
+          "evasao": {
+            "p10": 28.24,
+            "p25": 30.88,
+            "mediana": 33.72,
+            "p75": 36.67,
+            "p90": 39.42
+          },
+          "export": {
+            "p10": 291464.5,
+            "p25": 323051.0,
+            "mediana": 355973.0,
+            "p75": 391083.5,
+            "p90": 423904.6
+          },
+          "abates": {
+            "p10": 637143.1,
+            "p25": 666148.5,
+            "mediana": 698859.0,
+            "p75": 732629.25,
+            "p90": 763063.6
+          }
+        },
+        {
+          "ano": 2029,
+          "evasao": {
+            "p10": 25.67,
+            "p25": 29.18,
+            "mediana": 32.91,
+            "p75": 36.79,
+            "p90": 40.46
+          },
+          "export": {
+            "p10": 266508.1,
+            "p25": 307057.5,
+            "mediana": 350781.5,
+            "p75": 397866.75,
+            "p90": 442215.2
+          },
+          "abates": {
+            "p10": 630811.4,
+            "p25": 670364.0,
+            "mediana": 715509.5,
+            "p75": 761698.25,
+            "p90": 801431.1
+          }
+        },
+        {
+          "ano": 2030,
+          "evasao": {
+            "p10": 23.29,
+            "p25": 27.61,
+            "mediana": 32.15,
+            "p75": 36.94,
+            "p90": 41.52
+          },
+          "export": {
+            "p10": 243022.9,
+            "p25": 293165.0,
+            "mediana": 346813.5,
+            "p75": 405903.25,
+            "p90": 461622.5
+          },
+          "abates": {
+            "p10": 624735.6,
+            "p25": 675071.5,
+            "mediana": 732685.5,
+            "p75": 791231.0,
+            "p90": 839302.2
+          }
+        }
+      ]
+    },
+    "industrializacao": {
+      "nome": "Industrialização local",
+      "percentis_2030": {
+        "evasao": {
+          "p10": 13.48,
+          "p25": 18.07,
+          "mediana": 22.96,
+          "p75": 27.97,
+          "p90": 32.54
+        },
+        "abates": {
+          "p10": 699124.0,
+          "p25": 750466.5,
+          "mediana": 810443.5,
+          "p75": 873281.25,
+          "p90": 927555.0
+        },
+        "export": {
+          "p10": 138644.2,
+          "p25": 188339.5,
+          "mediana": 241847.0,
+          "p75": 298569.25,
+          "p90": 350478.3
+        },
+        "utilizacao": {
+          "p10": 68.13,
+          "p25": 73.5,
+          "mediana": 79.77,
+          "p75": 86.26,
+          "p90": 92.32
+        },
+        "empregos_risco": {
+          "p10": 0.0,
+          "p25": 0.0,
+          "mediana": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "riscos": {
+        "evasao_acima_50": 0.0,
+        "export_supera_abate": 0.0,
+        "utilizacao_abaixo_60": 0.009,
+        "abates_abaixo_500k": 0.0
+      },
+      "tornado": [
+        {
+          "fator": "propensao_exportar",
+          "correlacao": 0.99,
+          "label": "Propensão a exportar"
+        },
+        {
+          "fator": "preco_relativo",
+          "correlacao": 0.76,
+          "label": "Preço relativo AC vs MT/RO/SP"
+        },
+        {
+          "fator": "taxa_desfrute",
+          "correlacao": 0.31,
+          "label": "Taxa de desfrute"
+        },
+        {
+          "fator": "capacidade_cagr",
+          "correlacao": -0.28,
+          "label": "Crescimento da capacidade"
+        },
+        {
+          "fator": "taxa_natal",
+          "correlacao": 0.0,
+          "label": "Taxa de natalidade"
+        }
+      ],
+      "fan": [
+        {
+          "ano": 2026,
+          "evasao": {
+            "p10": 31.69,
+            "p25": 32.63,
+            "mediana": 33.61,
+            "p75": 34.63,
+            "p90": 35.55
+          },
+          "export": {
+            "p10": 324221.1,
+            "p25": 334567.75,
+            "mediana": 346027.0,
+            "p75": 357463.5,
+            "p90": 367975.2
+          },
+          "abates": {
+            "p10": 663790.3,
+            "p25": 672690.75,
+            "mediana": 682808.5,
+            "p75": 693037.0,
+            "p90": 702244.1
+          }
+        },
+        {
+          "ano": 2027,
+          "evasao": {
+            "p10": 27.08,
+            "p25": 28.96,
+            "mediana": 30.93,
+            "p75": 32.96,
+            "p90": 34.79
+          },
+          "export": {
+            "p10": 276329.9,
+            "p25": 296929.25,
+            "mediana": 319283.5,
+            "p75": 342220.75,
+            "p90": 362922.1
+          },
+          "abates": {
+            "p10": 670773.6,
+            "p25": 690665.25,
+            "mediana": 712008.5,
+            "p75": 734267.75,
+            "p90": 753402.3
+          }
+        },
+        {
+          "ano": 2028,
+          "evasao": {
+            "p10": 22.49,
+            "p25": 25.29,
+            "mediana": 28.25,
+            "p75": 31.29,
+            "p90": 34.04
+          },
+          "export": {
+            "p10": 229758.6,
+            "p25": 260263.75,
+            "mediana": 293217.5,
+            "p75": 327545.5,
+            "p90": 358542.4
+          },
+          "abates": {
+            "p10": 678989.9,
+            "p25": 708871.5,
+            "mediana": 742867.5,
+            "p75": 778059.25,
+            "p90": 808667.6
+          }
+        },
+        {
+          "ano": 2029,
+          "evasao": {
+            "p10": 17.96,
+            "p25": 21.65,
+            "mediana": 25.59,
+            "p75": 29.63,
+            "p90": 33.29
+          },
+          "export": {
+            "p10": 183309.0,
+            "p25": 224034.25,
+            "mediana": 267215.5,
+            "p75": 312731.5,
+            "p90": 354228.6
+          },
+          "abates": {
+            "p10": 688074.2,
+            "p25": 728887.0,
+            "mediana": 775773.5,
+            "p75": 824544.0,
+            "p90": 866328.3
+          }
+        },
+        {
+          "ano": 2030,
+          "evasao": {
+            "p10": 13.48,
+            "p25": 18.07,
+            "mediana": 22.96,
+            "p75": 27.97,
+            "p90": 32.54
+          },
+          "export": {
+            "p10": 138644.2,
+            "p25": 188339.5,
+            "mediana": 241847.0,
+            "p75": 298569.25,
+            "p90": 350478.3
+          },
+          "abates": {
+            "p10": 699124.0,
+            "p25": 750466.5,
+            "mediana": 810443.5,
+            "p75": 873281.25,
+            "p90": 927555.0
+          }
+        }
+      ]
+    },
+    "pressao_externa": {
+      "nome": "Pressão externa",
+      "percentis_2030": {
+        "evasao": {
+          "p10": 42.39,
+          "p25": 46.87,
+          "mediana": 51.82,
+          "p75": 56.77,
+          "p90": 61.27
+        },
+        "abates": {
+          "p10": 434454.0,
+          "p25": 487388.25,
+          "mediana": 542794.5,
+          "p75": 600393.0,
+          "p90": 653632.4
+        },
+        "export": {
+          "p10": 464729.1,
+          "p25": 519544.75,
+          "mediana": 583365.5,
+          "p75": 651531.0,
+          "p90": 713738.1
+        },
+        "utilizacao": {
+          "p10": 55.94,
+          "p25": 62.29,
+          "mediana": 69.31,
+          "p75": 76.87,
+          "p90": 84.1
+        },
+        "empregos_risco": {
+          "p10": 49.0,
+          "p25": 290.0,
+          "mediana": 551.5,
+          "p75": 803.0,
+          "p90": 1043.0
+        }
+      },
+      "riscos": {
+        "evasao_acima_50": 0.596,
+        "export_supera_abate": 0.597,
+        "utilizacao_abaixo_60": 0.188,
+        "abates_abaixo_500k": 0.3
+      },
+      "tornado": [
+        {
+          "fator": "propensao_exportar",
+          "correlacao": 1.0,
+          "label": "Propensão a exportar"
+        },
+        {
+          "fator": "preco_relativo",
+          "correlacao": 0.76,
+          "label": "Preço relativo AC vs MT/RO/SP"
+        },
+        {
+          "fator": "taxa_desfrute",
+          "correlacao": 0.32,
+          "label": "Taxa de desfrute"
+        },
+        {
+          "fator": "capacidade_cagr",
+          "correlacao": -0.25,
+          "label": "Crescimento da capacidade"
+        },
+        {
+          "fator": "taxa_natal",
+          "correlacao": 0.0,
+          "label": "Taxa de natalidade"
+        }
+      ],
+      "fan": [
+        {
+          "ano": 2026,
+          "evasao": {
+            "p10": 37.51,
+            "p25": 38.41,
+            "mediana": 39.4,
+            "p75": 40.39,
+            "p90": 41.29
+          },
+          "export": {
+            "p10": 391924.6,
+            "p25": 402584.5,
+            "mediana": 414496.0,
+            "p75": 426410.25,
+            "p90": 437156.7
+          },
+          "abates": {
+            "p10": 618081.6,
+            "p25": 627263.75,
+            "mediana": 637252.5,
+            "p75": 647629.5,
+            "p90": 656503.4
+          }
+        },
+        {
+          "ano": 2027,
+          "evasao": {
+            "p10": 38.73,
+            "p25": 40.53,
+            "mediana": 42.51,
+            "p75": 44.49,
+            "p90": 46.29
+          },
+          "export": {
+            "p10": 410447.7,
+            "p25": 431882.75,
+            "mediana": 456097.5,
+            "p75": 481315.25,
+            "p90": 503562.1
+          },
+          "abates": {
+            "p10": 576666.0,
+            "p25": 596140.75,
+            "mediana": 617117.0,
+            "p75": 638331.25,
+            "p90": 657876.9
+          }
+        },
+        {
+          "ano": 2028,
+          "evasao": {
+            "p10": 39.94,
+            "p25": 42.64,
+            "mediana": 45.61,
+            "p75": 48.58,
+            "p90": 51.28
+          },
+          "export": {
+            "p10": 428500.9,
+            "p25": 461025.5,
+            "mediana": 498430.0,
+            "p75": 537048.0,
+            "p90": 572529.0
+          },
+          "abates": {
+            "p10": 531195.8,
+            "p25": 562340.5,
+            "mediana": 595000.0,
+            "p75": 627606.25,
+            "p90": 657812.0
+          }
+        },
+        {
+          "ano": 2029,
+          "evasao": {
+            "p10": 41.15,
+            "p25": 44.76,
+            "mediana": 48.72,
+            "p75": 52.67,
+            "p90": 56.28
+          },
+          "export": {
+            "p10": 446950.6,
+            "p25": 490280.25,
+            "mediana": 541131.5,
+            "p75": 594196.0,
+            "p90": 642193.4
+          },
+          "abates": {
+            "p10": 484090.5,
+            "p25": 525947.75,
+            "mediana": 569931.5,
+            "p75": 614801.25,
+            "p90": 656691.5
+          }
+        },
+        {
+          "ano": 2030,
+          "evasao": {
+            "p10": 42.39,
+            "p25": 46.87,
+            "mediana": 51.82,
+            "p75": 56.77,
+            "p90": 61.27
+          },
+          "export": {
+            "p10": 464729.1,
+            "p25": 519544.75,
+            "mediana": 583365.5,
+            "p75": 651531.0,
+            "p90": 713738.1
+          },
+          "abates": {
+            "p10": 434454.0,
+            "p25": 487388.25,
+            "mediana": 542794.5,
+            "p75": 600393.0,
+            "p90": 653632.4
+          }
+        }
+      ]
+    }
+  }
+}

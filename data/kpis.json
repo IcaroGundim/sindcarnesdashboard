@@ -1,0 +1,68 @@
+{
+  "kpi": {
+    "ultimo_ano": 2025,
+    "abates_2025": 664435,
+    "export_2025": 378708,
+    "taxa_evasao_2025": 36.3,
+    "rebanho_2024": 5186919,
+    "crescimento_rebanho_2015_2024": 77.9,
+    "machos_jovens_exportados_2025": 284887,
+    "crescimento_export_2015_2025": 1053.2,
+    "preco_boi_2025": 313.93,
+    "preco_bezerro_2025": 2856.2,
+    "ssi_2025": 92.8,
+    "idi_2025": 25.0,
+    "destino_principal_2025": "MT",
+    "share_mt_2025": 58.6,
+    "trabalhadores_frigorifico_2025": 2117,
+    "salario_medio_frig_2025": 2055.8
+  },
+  "executive": {
+    "title": "Sustentabilidade da Industria de Abate Bovina do Acre — Diagnostico Executivo",
+    "date": "Maio 2026",
+    "key_metrics": {
+      "export_growth_10yr_pct": 1053.2,
+      "evasion_rate_2025_pct": 36.3,
+      "exp_abate_ratio_2025_pct": 57.0,
+      "young_male_export_share_pct": 75.2,
+      "mt_concentration_pct": 65.4,
+      "estimated_saturation_year": 2034,
+      "herd_2024_million": 5.19,
+      "slaughter_2025": 664435,
+      "export_2025": 378708,
+      "workers_at_risk": 2117,
+      "avg_wage_frig_2025": 2055.8
+    },
+    "granger_causality": {
+      "12": {
+        "f_stat": 1.53,
+        "p_value": 0.1256
+      },
+      "24": {
+        "f_stat": 1.46,
+        "p_value": 0.1185
+      },
+      "36": {
+        "f_stat": 1.17,
+        "p_value": 0.3411
+      }
+    },
+    "scenarios_2030": {
+      "status_quo": {
+        "export": 206997,
+        "abates": 253525,
+        "evasion_pct": 44.9
+      },
+      "pessimista": {
+        "export": 294043,
+        "abates": 241339,
+        "evasion_pct": 54.9
+      },
+      "otimista": {
+        "export": 129970,
+        "abates": 279375,
+        "evasion_pct": 31.8
+      }
+    }
+  }
+}

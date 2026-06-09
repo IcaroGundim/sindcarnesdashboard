@@ -1,0 +1,160 @@
+{
+  "frigorifico": [
+    {
+      "ano": 2015,
+      "vinculos": 1796,
+      "ativos": 1133,
+      "rem_media": 1271.7551,
+      "massa": 1522834.92
+    },
+    {
+      "ano": 2016,
+      "vinculos": 1425,
+      "ativos": 1103,
+      "rem_media": 1388.8996,
+      "massa": 1620695.39
+    },
+    {
+      "ano": 2017,
+      "vinculos": 1324,
+      "ativos": 1083,
+      "rem_media": 1562.7438,
+      "massa": 1831062.45
+    },
+    {
+      "ano": 2018,
+      "vinculos": 1433,
+      "ativos": 1138,
+      "rem_media": 1625.1923,
+      "massa": 1992564.4
+    },
+    {
+      "ano": 2019,
+      "vinculos": 1312,
+      "ativos": 1028,
+      "rem_media": 1679.3783,
+      "massa": 1779717.07
+    },
+    {
+      "ano": 2020,
+      "vinculos": 1378,
+      "ativos": 1132,
+      "rem_media": 1672.7794,
+      "massa": 1962885.37
+    },
+    {
+      "ano": 2021,
+      "vinculos": 1523,
+      "ativos": 1130,
+      "rem_media": 1716.8725,
+      "massa": 2087263.95
+    },
+    {
+      "ano": 2022,
+      "vinculos": 1614,
+      "ativos": 1181,
+      "rem_media": 2026.2141,
+      "massa": 2314958.99
+    },
+    {
+      "ano": 2023,
+      "vinculos": 2248,
+      "ativos": 1613,
+      "rem_media": 1939.3346,
+      "massa": 3358358.17
+    },
+    {
+      "ano": 2024,
+      "vinculos": 2542,
+      "ativos": 1771,
+      "rem_media": 1993.7033,
+      "massa": 3890820.06
+    },
+    {
+      "ano": 2025,
+      "vinculos": 3013,
+      "ativos": 2117,
+      "rem_media": 2055.8002,
+      "massa": 4944701.22
+    }
+  ],
+  "pecuaria": [
+    {
+      "ano": 2015,
+      "vinculos": 5505,
+      "ativos": 3116,
+      "rem_media": 1008.1779,
+      "massa": 3439361.46
+    },
+    {
+      "ano": 2016,
+      "vinculos": 5476,
+      "ativos": 3184,
+      "rem_media": 1118.4868,
+      "massa": 3952046.01
+    },
+    {
+      "ano": 2017,
+      "vinculos": 5375,
+      "ativos": 3298,
+      "rem_media": 1197.5306,
+      "massa": 4238587.98
+    },
+    {
+      "ano": 2018,
+      "vinculos": 5025,
+      "ativos": 3145,
+      "rem_media": 1225.7183,
+      "massa": 4137244.97
+    },
+    {
+      "ano": 2019,
+      "vinculos": 4604,
+      "ativos": 2915,
+      "rem_media": 1275.7093,
+      "massa": 3935663.04
+    },
+    {
+      "ano": 2020,
+      "vinculos": 4408,
+      "ativos": 2843,
+      "rem_media": 1296.5454,
+      "massa": 4095076.7
+    },
+    {
+      "ano": 2021,
+      "vinculos": 4569,
+      "ativos": 2859,
+      "rem_media": 1386.509,
+      "massa": 4397504.81
+    },
+    {
+      "ano": 2022,
+      "vinculos": 5014,
+      "ativos": 3200,
+      "rem_media": 1475.7442,
+      "massa": 4900180.96
+    },
+    {
+      "ano": 2023,
+      "vinculos": 4944,
+      "ativos": 3190,
+      "rem_media": 1561.4463,
+      "massa": 5354021.61
+    },
+    {
+      "ano": 2024,
+      "vinculos": 4961,
+      "ativos": 3211,
+      "rem_media": 1666.6051,
+      "massa": 5746010.44
+    },
+    {
+      "ano": 2025,
+      "vinculos": 5044,
+      "ativos": 3355,
+      "rem_media": 1781.0398,
+      "massa": 6426444.91
+    }
+  ]
+}

@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw shapefiles (only used to regenerate data/br_uf.topo.json, not needed to build/deploy)
+/SHAPE BRASIL/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

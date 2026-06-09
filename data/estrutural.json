@@ -1,0 +1,354 @@
+{
+  "baseline_2025": {
+    "rebanho": 5186919,
+    "abates": 664435,
+    "export": 378708,
+    "evasao": 36.3,
+    "capacidade": 760000,
+    "utilizacao": 87.43
+  },
+  "parametros_base": {
+    "taxa_natal_pct": 26.5,
+    "taxa_mort_pct": 5.0,
+    "taxa_desfrute_pct": 20.1,
+    "propensao_exportar_pct": 36.3,
+    "empregos_por_mil_abates": 4.53
+  },
+  "cenarios": {
+    "continuidade": {
+      "nome": "Continuidade",
+      "descricao": "Baixa mudança institucional. A exportação em pé segue atrativa, a capacidade industrial cresce pouco e a evasão permanece alta ou crescente.",
+      "drivers": [
+        "Exportação atrativa",
+        "Capacidade quase estagnada",
+        "Sem política de retenção"
+      ],
+      "premissas_2030": {
+        "propensao_exportar_pct": 42.0,
+        "taxa_desfrute_pct": 20.5,
+        "capacidade_cagr_pct": 1.0
+      },
+      "trajetoria": [
+        {
+          "rebanho": 5186919,
+          "abates": 654828,
+          "export": 391892,
+          "evasao": 37.44,
+          "utilizacao": 85.31,
+          "empregos_risco": 44,
+          "ano": 2026
+        },
+        {
+          "rebanho": 5255386,
+          "abates": 653964,
+          "export": 410777,
+          "evasao": 38.58,
+          "utilizacao": 84.35,
+          "empregos_risco": 47,
+          "ano": 2027
+        },
+        {
+          "rebanho": 5320553,
+          "abates": 652350,
+          "export": 429850,
+          "evasao": 39.72,
+          "utilizacao": 83.31,
+          "empregos_risco": 55,
+          "ano": 2028
+        },
+        {
+          "rebanho": 5382272,
+          "abates": 649984,
+          "export": 449076,
+          "evasao": 40.86,
+          "utilizacao": 82.19,
+          "empregos_risco": 66,
+          "ano": 2029
+        },
+        {
+          "rebanho": 5440400,
+          "abates": 646864,
+          "export": 468418,
+          "evasao": 42.0,
+          "utilizacao": 80.98,
+          "empregos_risco": 80,
+          "ano": 2030
+        }
+      ],
+      "resultado_2030": {
+        "rebanho": 5440400,
+        "abates": 646864,
+        "export": 468418,
+        "evasao": 42.0,
+        "utilizacao": 80.98,
+        "empregos_risco": 80,
+        "ano": 2030
+      }
+    },
+    "retencao_moderada": {
+      "nome": "Retenção moderada",
+      "descricao": "Alguma política de incentivo ao abate local, leve aumento da utilização frigorífica e perda parcial da atratividade da exportação. A evasão estabiliza.",
+      "drivers": [
+        "Incentivo parcial ao abate",
+        "Capacidade +3%/ano",
+        "Exportação menos atrativa"
+      ],
+      "premissas_2030": {
+        "propensao_exportar_pct": 32.0,
+        "taxa_desfrute_pct": 19.5,
+        "capacidade_cagr_pct": 3.0
+      },
+      "trajetoria": [
+        {
+          "rebanho": 5186919,
+          "abates": 669065,
+          "export": 367281,
+          "evasao": 35.44,
+          "utilizacao": 85.47,
+          "empregos_risco": 0,
+          "ano": 2026
+        },
+        {
+          "rebanho": 5265760,
+          "abates": 684149,
+          "export": 361631,
+          "evasao": 34.58,
+          "utilizacao": 84.85,
+          "empregos_risco": 0,
+          "ano": 2027
+        },
+        {
+          "rebanho": 5352119,
+          "abates": 700254,
+          "export": 356255,
+          "evasao": 33.72,
+          "utilizacao": 84.32,
+          "empregos_risco": 0,
+          "ano": 2028
+        },
+        {
+          "rebanho": 5446316,
+          "abates": 717436,
+          "export": 351131,
+          "evasao": 32.86,
+          "utilizacao": 83.87,
+          "empregos_risco": 0,
+          "ano": 2029
+        },
+        {
+          "rebanho": 5548707,
+          "abates": 735759,
+          "export": 346239,
+          "evasao": 32.0,
+          "utilizacao": 83.51,
+          "empregos_risco": 0,
+          "ano": 2030
+        }
+      ],
+      "resultado_2030": {
+        "rebanho": 5548707,
+        "abates": 735759,
+        "export": 346239,
+        "evasao": 32.0,
+        "utilizacao": 83.51,
+        "empregos_risco": 0,
+        "ano": 2030
+      }
+    },
+    "industrializacao": {
+      "nome": "Industrialização local",
+      "descricao": "Aumento de abate local, maior capacidade e utilização, contratos de fornecimento e retenção de animais. A evasão cai de forma consistente.",
+      "drivers": [
+        "Contratos de fornecimento",
+        "Capacidade +6%/ano",
+        "Retenção de matrizes"
+      ],
+      "premissas_2030": {
+        "propensao_exportar_pct": 23.0,
+        "taxa_desfrute_pct": 18.8,
+        "capacidade_cagr_pct": 6.0
+      },
+      "trajetoria": [
+        {
+          "rebanho": 5186919,
+          "abates": 682901,
+          "export": 346184,
+          "evasao": 33.64,
+          "utilizacao": 84.77,
+          "empregos_risco": 0,
+          "ano": 2026
+        },
+        {
+          "rebanho": 5273022,
+          "abates": 712602,
+          "export": 319855,
+          "evasao": 30.98,
+          "utilizacao": 83.45,
+          "empregos_risco": 0,
+          "ano": 2027
+        },
+        {
+          "rebanho": 5374264,
+          "abates": 744259,
+          "export": 294049,
+          "evasao": 28.32,
+          "utilizacao": 82.22,
+          "empregos_risco": 0,
+          "ano": 2028
+        },
+        {
+          "rebanho": 5491423,
+          "abates": 778091,
+          "export": 268574,
+          "evasao": 25.66,
+          "utilizacao": 81.09,
+          "empregos_risco": 0,
+          "ano": 2029
+        },
+        {
+          "rebanho": 5625414,
+          "abates": 814335,
+          "export": 243243,
+          "evasao": 23.0,
+          "utilizacao": 80.07,
+          "empregos_risco": 0,
+          "ano": 2030
+        }
+      ],
+      "resultado_2030": {
+        "rebanho": 5625414,
+        "abates": 814335,
+        "export": 243243,
+        "evasao": 23.0,
+        "utilizacao": 80.07,
+        "empregos_risco": 0,
+        "ano": 2030
+      }
+    },
+    "pressao_externa": {
+      "nome": "Pressão externa",
+      "descricao": "MT e outros destinos seguem puxando a demanda com preço mais atrativo. Os frigoríficos locais perdem matéria-prima e a evasão sobe.",
+      "drivers": [
+        "Demanda externa forte",
+        "Capacidade estagnada",
+        "Preço externo atrativo"
+      ],
+      "premissas_2030": {
+        "propensao_exportar_pct": 52.0,
+        "taxa_desfrute_pct": 21.0,
+        "capacidade_cagr_pct": 0.5
+      },
+      "trajetoria": [
+        {
+          "rebanho": 5186919,
+          "abates": 637035,
+          "export": 414872,
+          "evasao": 39.44,
+          "utilizacao": 83.4,
+          "empregos_risco": 124,
+          "ano": 2026
+        },
+        {
+          "rebanho": 5250199,
+          "abates": 616800,
+          "export": 457390,
+          "evasao": 42.58,
+          "utilizacao": 80.35,
+          "empregos_risco": 216,
+          "ano": 2027
+        },
+        {
+          "rebanho": 5304801,
+          "abates": 594318,
+          "export": 500593,
+          "evasao": 45.72,
+          "utilizacao": 77.04,
+          "empregos_risco": 318,
+          "ano": 2028
+        },
+        {
+          "rebanho": 5350423,
+          "abates": 569678,
+          "export": 544280,
+          "evasao": 48.86,
+          "utilizacao": 73.48,
+          "empregos_risco": 430,
+          "ano": 2029
+        },
+        {
+          "rebanho": 5386806,
+          "abates": 542990,
+          "export": 588239,
+          "evasao": 52.0,
+          "utilizacao": 69.69,
+          "empregos_risco": 551,
+          "ano": 2030
+        }
+      ],
+      "resultado_2030": {
+        "rebanho": 5386806,
+        "abates": 542990,
+        "export": 588239,
+        "evasao": 52.0,
+        "utilizacao": 69.69,
+        "empregos_risco": 551,
+        "ano": 2030
+      }
+    }
+  },
+  "validacao": {
+    "serie": [
+      {
+        "ano": 2015,
+        "rebanho_real": 2916207,
+        "rebanho_modelo": 2916207
+      },
+      {
+        "ano": 2016,
+        "rebanho_real": 2998969,
+        "rebanho_modelo": 3091862
+      },
+      {
+        "ano": 2017,
+        "rebanho_real": 2895028,
+        "rebanho_modelo": 3276032
+      },
+      {
+        "ano": 2018,
+        "rebanho_real": 3303633,
+        "rebanho_modelo": 3517324
+      },
+      {
+        "ano": 2019,
+        "rebanho_real": 3509682,
+        "rebanho_modelo": 3776972
+      },
+      {
+        "ano": 2020,
+        "rebanho_real": 3802112,
+        "rebanho_modelo": 4018127
+      },
+      {
+        "ano": 2021,
+        "rebanho_real": 4047283,
+        "rebanho_modelo": 4257857
+      },
+      {
+        "ano": 2022,
+        "rebanho_real": 4635381,
+        "rebanho_modelo": 4717613
+      },
+      {
+        "ano": 2023,
+        "rebanho_real": 4908956,
+        "rebanho_modelo": 5252875
+      },
+      {
+        "ano": 2024,
+        "rebanho_real": 5186919,
+        "rebanho_modelo": 5745548
+      }
+    ],
+    "mape_rebanho": 6.08
+  }
+}

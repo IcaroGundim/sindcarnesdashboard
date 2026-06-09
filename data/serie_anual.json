@@ -1,0 +1,106 @@
+[
+  {
+    "ano": 2013,
+    "rebanho_acre": 2697489.0,
+    "abates": 442629,
+    "exportacoes": null,
+    "taxa_evasao": null,
+    "taxa_desfrute": null
+  },
+  {
+    "ano": 2014,
+    "rebanho_acre": 2799673.0,
+    "abates": 455332,
+    "exportacoes": 45911.0,
+    "taxa_evasao": 10.083,
+    "taxa_desfrute": 17.9036
+  },
+  {
+    "ano": 2015,
+    "rebanho_acre": 2916207.0,
+    "abates": 418489,
+    "exportacoes": 32841.0,
+    "taxa_evasao": 7.8475,
+    "taxa_desfrute": 15.4766
+  },
+  {
+    "ano": 2016,
+    "rebanho_acre": 2998969.0,
+    "abates": 451717,
+    "exportacoes": 28863.0,
+    "taxa_evasao": 6.3896,
+    "taxa_desfrute": 16.0248
+  },
+  {
+    "ano": 2017,
+    "rebanho_acre": 2895028.0,
+    "abates": 431424,
+    "exportacoes": 31631.0,
+    "taxa_evasao": 7.3318,
+    "taxa_desfrute": 15.9948
+  },
+  {
+    "ano": 2018,
+    "rebanho_acre": 3303633.0,
+    "abates": 440973,
+    "exportacoes": 55603.0,
+    "taxa_evasao": 12.6092,
+    "taxa_desfrute": 15.0312
+  },
+  {
+    "ano": 2019,
+    "rebanho_acre": 3509682.0,
+    "abates": 459270,
+    "exportacoes": 111624.0,
+    "taxa_evasao": 24.3047,
+    "taxa_desfrute": 16.2663
+  },
+  {
+    "ano": 2020,
+    "rebanho_acre": 3802112.0,
+    "abates": 403852,
+    "exportacoes": 220315.0,
+    "taxa_evasao": 54.5534,
+    "taxa_desfrute": 16.4163
+  },
+  {
+    "ano": 2021,
+    "rebanho_acre": 4047283.0,
+    "abates": 347355,
+    "exportacoes": 108329.0,
+    "taxa_evasao": 31.1868,
+    "taxa_desfrute": 11.259
+  },
+  {
+    "ano": 2022,
+    "rebanho_acre": 4635381.0,
+    "abates": 365707,
+    "exportacoes": 113318.0,
+    "taxa_evasao": 30.986,
+    "taxa_desfrute": 10.3341
+  },
+  {
+    "ano": 2023,
+    "rebanho_acre": 4908956.0,
+    "abates": 494386,
+    "exportacoes": 142309.0,
+    "taxa_evasao": 28.785,
+    "taxa_desfrute": 12.9701
+  },
+  {
+    "ano": 2024,
+    "rebanho_acre": 5186919.0,
+    "abates": 581252,
+    "exportacoes": 216887.0,
+    "taxa_evasao": 37.3138,
+    "taxa_desfrute": 15.3875
+  },
+  {
+    "ano": 2025,
+    "rebanho_acre": 5186919.0,
+    "abates": 664435,
+    "exportacoes": 378708.0,
+    "taxa_evasao": 56.997,
+    "taxa_desfrute": 20.111
+  }
+]
