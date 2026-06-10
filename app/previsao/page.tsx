@@ -152,7 +152,7 @@ function SlideEspecificacao() {
           </p>
           <dl className="divide-y">
             <VarDef sym={<>y<sub>t</sub></>}>
-              valor observado no mês t (cabeças): exportação ou abates
+              valor observado no mês t (cabeças): evasão ou abates
             </VarDef>
             <VarDef sym={<>ℓ<sub>t</sub></>}>nível suavizado da série</VarDef>
             <VarDef sym={<>b<sub>t</sub></>}>tendência (variação mensal do nível)</VarDef>
@@ -210,23 +210,23 @@ function SlideIntuicao() {
           Na versão aditiva, o efeito da época do ano é somado em quantidade fixa
           de cabeças, não em porcentagem. Isso funciona bem quando o vai e vem
           sazonal tem tamanho parecido independentemente de a série estar alta ou
-          baixa. Também é a escolha segura aqui porque a exportação tem meses
+          baixa. Também é a escolha segura aqui porque a evasão tem meses
           quase zerados no histórico, situação em que a versão multiplicativa
           (baseada em porcentagens) deixa de funcionar. Por fim, o modelo aplica
           um piso em zero para a previsão nunca sair negativa.
         </p>
       </div>
       <div className="rounded-lg border p-4">
-        <p className="mb-1 text-sm font-semibold">E a evasão?</p>
+        <p className="mb-1 text-sm font-semibold">E a taxa de evasão?</p>
         <p className="text-muted-foreground text-[13px] leading-relaxed">
-          A evasão tem um modelo próprio, com um cuidado extra: como é uma taxa,
+          A taxa de evasão tem um modelo próprio, com um cuidado extra: como é uma taxa,
           ela precisa ficar sempre entre 0% e 100%. Para garantir isso, o modelo
           trabalha numa escala transformada chamada logit, que estica a taxa
           para uma reta sem limites. O Holt-Winters roda nessa escala e o
           resultado é convertido de volta para porcentagem, o que torna
           impossível prever valores absurdos como 110% ou abaixo de zero. Como
-          checagem, a previsão é comparada com a evasão calculada a partir das
-          previsões de exportação e abate, e as duas leituras contam histórias
+          checagem, a previsão é comparada com a taxa de evasão calculada a partir das
+          previsões de evasão e abate, e as duas leituras contam histórias
           parecidas.
         </p>
       </div>
@@ -328,7 +328,7 @@ function ModeloHoltWinters() {
   return (
     <ChartCard
       title="Especificação do modelo (Holt-Winters aditivo)"
-      description="Suavização exponencial com nível, tendência e sazonalidade aditiva (período m = 12 meses). Exportação e abates são modelados em cabeças; a taxa de evasão é modelada em escala logit, que mantém a previsão entre 0% e 100%."
+      description="Suavização exponencial com nível, tendência e sazonalidade aditiva (período m = 12 meses). Evasão e abates são modelados em cabeças; a taxa de evasão é modelada em escala logit, que mantém a previsão entre 0% e 100%."
       footer="α, β, γ calibrados por busca em grade minimizando o SSE de previsão 1-passo. Intervalos empíricos a partir dos resíduos do backtesting de origem móvel. Fiel a scripts/build_models.py."
     >
       <div className="p-3">
@@ -431,9 +431,9 @@ function FatoresEvasaoCard() {
   );
   return (
     <ChartCard
-      title="O que move a evasão"
-      description={`Análise complementar: regressão da evasão (em escala logit) sobre fatores padronizados, nos ${fat.n} meses com preços disponíveis. R² = ${fat.r2.toFixed(2)}. Não é o modelo de previsão; serve para entender direções e forças.`}
-      footer="Barras para a direita aumentam a evasão; para a esquerda, reduzem. O tamanho da barra indica a força relativa do fator (coeficiente padronizado)."
+      title="O que move a taxa de evasão"
+      description={`Análise complementar: regressão da taxa de evasão (em escala logit) sobre fatores padronizados, nos ${fat.n} meses com preços disponíveis. R² = ${fat.r2.toFixed(2)}. Não é o modelo de previsão; serve para entender direções e forças.`}
+      footer="Barras para a direita aumentam a taxa de evasão; para a esquerda, reduzem. O tamanho da barra indica a força relativa do fator (coeficiente padronizado)."
     >
       <div className="space-y-3 p-3">
         {fat.coeficientes.map((c) => {
@@ -477,14 +477,14 @@ export default function PrevisaoPage() {
     <div className="space-y-6">
       <PageHeader
         title="Previsão de curto prazo"
-        subtitle="Modelo estatístico operacional de 3 a 24 meses para abates, exportação e evasão, validado por erro histórico (backtesting). É previsão de série temporal, não um cenário estrutural de 2030. A evasão tem modelo próprio em escala logit, que garante previsões sempre entre 0% e 100%."
+        subtitle="Modelo estatístico operacional de 3 a 24 meses para abates, evasão e taxa de evasão, validado por erro histórico (backtesting). É previsão de série temporal, não um cenário estrutural de 2030. A taxa de evasão tem modelo próprio em escala logit, que garante previsões sempre entre 0% e 100%."
       />
 
       <Tabs defaultValue="export">
         <TabsList>
-          <TabsTrigger value="export">Exportação</TabsTrigger>
+          <TabsTrigger value="export">Evasão</TabsTrigger>
           <TabsTrigger value="abate">Abates</TabsTrigger>
-          <TabsTrigger value="evasao">Evasão</TabsTrigger>
+          <TabsTrigger value="evasao">Taxa de evasão</TabsTrigger>
           <TabsTrigger value="explicacao">Explicação</TabsTrigger>
         </TabsList>
 

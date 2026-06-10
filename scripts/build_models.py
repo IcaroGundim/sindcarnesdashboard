@@ -451,7 +451,7 @@ def build_forecast(painel):
     export = [float(r["export_total"]) for r in rows]
     abate = [float(r["abates_total"]) for r in rows]
 
-    fx_export = prever_serie(export, datas, "Exportação interestadual")
+    fx_export = prever_serie(export, datas, "Evasão interestadual")
     fx_abate = prever_serie(abate, datas, "Abates")
 
     # Evasao com MODELO PROPRIO: Holt-Winters em escala logit sobre a taxa

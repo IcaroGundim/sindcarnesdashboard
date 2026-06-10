@@ -44,13 +44,13 @@ export default function ComposicaoEtariaPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Composição Etária da Exportação"
-        subtitle="O perfil dos animais que deixam o estado revela o mecanismo da drenagem: a maior parte são machos jovens (0–24 meses), que seriam abatidos localmente nos anos seguintes. Cada macho jovem exportado hoje é um abate perdido em 2–3 anos."
+        title="Composição Etária da Evasão"
+        subtitle="O perfil dos animais que deixam o estado revela o mecanismo da drenagem: a maior parte são machos jovens (0–24 meses), que seriam abatidos localmente nos anos seguintes. Cada macho jovem evadido hoje é um abate perdido em 2–3 anos."
       />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <KpiCard
-          label="Machos jovens no export (2025)"
+          label="Machos jovens na evasão (2025)"
           value={fmtPct(km.young_male_export_share_pct)}
           hint="0–24 meses"
           tone="danger"
@@ -58,7 +58,7 @@ export default function ComposicaoEtariaPage() {
           spark={serie.map((s) => s.jovens)}
         />
         <KpiCard
-          label="Fêmeas no export (2025)"
+          label="Fêmeas na evasão (2025)"
           value={fmtPct(serie[serie.length - 1]?.femeasPct ?? null)}
           hint="reduz a base reprodutiva"
           tone="warning"
@@ -66,7 +66,7 @@ export default function ComposicaoEtariaPage() {
           spark={serie.map((s) => s.femeasPct)}
         />
         <KpiCard
-          label="Machos jovens exportados (2025)"
+          label="Machos jovens evadidos (2025)"
           value={fmtInt(km.export_2025 * (km.young_male_export_share_pct / 100))}
           hint="cabeças (estimativa)"
           tone="danger"
@@ -76,8 +76,8 @@ export default function ComposicaoEtariaPage() {
       </div>
 
       <ChartCard
-        title="Exportação por classe etária e sexo"
-        description="Barras empilhadas: composição do volume exportado por ano. Linha: percentual de machos jovens (0–24 meses) sobre o total (eixo direito)."
+        title="Evasão por classe etária e sexo"
+        description="Barras empilhadas: composição do volume evadido por ano. Linha: percentual de machos jovens (0–24 meses) sobre o total (eixo direito)."
         footer="Fonte: IDAF — painel mensal agregado por ano."
       >
         <ComposedTrend

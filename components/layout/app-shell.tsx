@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 
 import { ALL_ITEMS, normalizePath } from "@/components/layout/nav";
 import { SidebarNav } from "@/components/layout/sidebar";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -37,7 +36,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        {/* Área direita: menu mobile / título / badge */}
+        {/* Área direita: menu mobile / título */}
         <div className="flex min-w-0 flex-1 items-center gap-3 px-4 lg:px-6">
           <Button
             variant="outline"
@@ -70,13 +69,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="flex-1 lg:hidden" />
-
-          <Badge
-            variant="outline"
-            className="hidden border-white/40 bg-white/15 text-white sm:inline-flex"
-          >
-            Dados 2013–2026
-          </Badge>
         </div>
       </header>
 

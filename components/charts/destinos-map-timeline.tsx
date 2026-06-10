@@ -19,7 +19,7 @@ interface Props {
 // Mapa de destinos com slider de linha do tempo: arraste para trocar o ano.
 // Reaproveitado na Visão Geral e na aba Destinos. A escala de cor usa o max
 // global (qualquer UF em qualquer ano), mantendo as cores comparáveis ao
-// longo do tempo — assim o slider revela o crescimento real da exportação.
+// longo do tempo — assim o slider revela o crescimento real da evasão.
 export function DestinosMapTimeline({ compact = true, mapMaxWidth }: Props) {
   const years = destinos.years;
   const lastYear = years[years.length - 1];
@@ -45,6 +45,21 @@ export function DestinosMapTimeline({ compact = true, mapMaxWidth }: Props) {
   const data = byYear.get(year) ?? [];
   const totalAno = data.reduce((s, d) => s + d.total, 0);
   const principal = data.length > 0 ? data[0] : null;
+
+  // Ultimo mes com dados no ano selecionado. Se < 12, o ano e parcial e
+  // mostramos uma ressalva (ex.: 2026 vai so ate abril).
+  const MESES = [
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
+  ];
+  const ultimoMes = React.useMemo(() => {
+    let m = 0;
+    for (const r of destinos.mt_share_by_month) {
+      if (r.ano === year && r.mes > m) m = r.mes;
+    }
+    return m;
+  }, [year]);
+  const anoParcial = ultimoMes > 0 && ultimoMes < 12;
 
   return (
     <div className="flex flex-col gap-1.5">
@@ -79,7 +94,7 @@ export function DestinosMapTimeline({ compact = true, mapMaxWidth }: Props) {
         <span className="text-foreground font-semibold tabular-nums">
           {fmtInt(totalAno)}
         </span>{" "}
-        cabeças exportadas em{" "}
+        cabeças evadidas em{" "}
         <span className="text-foreground font-semibold">{year}</span>
         {principal && (
           <>
@@ -91,6 +106,13 @@ export function DestinosMapTimeline({ compact = true, mapMaxWidth }: Props) {
           </>
         )}
       </p>
+
+      {anoParcial && (
+        <p className="text-muted-foreground text-[11px] italic">
+          * Dados de {year} referentes somente até {MESES[ultimoMes - 1]} de{" "}
+          {year} (ano parcial).
+        </p>
+      )}
     </div>
   );
 }

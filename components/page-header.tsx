@@ -29,19 +29,24 @@ export function ChartCard({
   description,
   children,
   footer,
+  action,
 }: {
   title: string;
   description?: string;
   children: React.ReactNode;
   footer?: React.ReactNode;
+  action?: React.ReactNode;
 }) {
   return (
     <div className="bg-card text-card-foreground flex h-full max-w-[1536px] flex-col rounded-xl border shadow-sm">
-      <div className="border-b px-5 py-4">
-        <h3 className="font-semibold leading-none tracking-tight">{title}</h3>
-        {description && (
-          <p className="text-muted-foreground mt-1.5 text-sm">{description}</p>
-        )}
+      <div className="flex items-start justify-between gap-4 border-b px-5 py-4">
+        <div className="min-w-0">
+          <h3 className="font-semibold leading-none tracking-tight">{title}</h3>
+          {description && (
+            <p className="text-muted-foreground mt-1.5 text-sm">{description}</p>
+          )}
+        </div>
+        {action && <div className="flex shrink-0 items-center">{action}</div>}
       </div>
       <div className="min-h-0 flex-1 p-2 sm:p-3">{children}</div>
       {footer && (

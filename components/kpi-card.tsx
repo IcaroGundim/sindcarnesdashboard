@@ -42,6 +42,7 @@ export function KpiCard({
   icon: Icon,
   spark,
   sparkColor,
+  sparkFmt: sparkFmtProp,
 }: {
   label: string;
   value: string;
@@ -52,13 +53,18 @@ export function KpiCard({
   icon?: Icon;
   spark?: (number | null)[];
   sparkColor?: string;
+  // Formatador da sparkline. Por padrão é deduzido do `value`, mas isso falha
+  // quando a unidade do `value` difere da série (ex.: KPI de crescimento em %
+  // cuja mini-série mostra valores absolutos). Passe explicitamente nesses casos.
+  sparkFmt?: (v: number) => string;
 }) {
   const hasSpark = !!spark && spark.filter((v) => v != null).length > 1;
   const sparkFmt = React.useMemo(() => {
+    if (sparkFmtProp) return sparkFmtProp;
     if (value.includes("%")) return fmtPct;
     if (value.includes("R$")) return fmtBRL;
     return fmtInt;
-  }, [value]);
+  }, [value, sparkFmtProp]);
 
   return (
     <Card

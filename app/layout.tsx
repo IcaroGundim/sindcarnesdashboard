@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SINDICARNES Acre — Diagnóstico da Indústria de Abate Bovina",
   description:
-    "Painel executivo do SINDICARNES Acre sobre a sustentabilidade da indústria de abate bovino do estado: abates, exportação interestadual, evasão, preços, emprego e cenários.",
+    "Painel executivo do SINDICARNES Acre sobre a sustentabilidade da indústria de abate bovino do estado: abates, evasão interestadual de bovinos, preços, emprego e cenários.",
 };
 
 export default function RootLayout({

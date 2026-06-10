@@ -31,7 +31,7 @@ const ESTILO: Record<
 
 const RISCO_LABEL: Record<string, string> = {
   evasao_acima_50: "Evasão acima de 50%",
-  export_supera_abate: "Exportação supera o abate",
+  export_supera_abate: "Evasão supera o abate",
   utilizacao_abaixo_60: "Utilização industrial < 60%",
   abates_abaixo_500k: "Abates locais < 500 mil",
 };
@@ -62,7 +62,7 @@ function PercentilTabela({ mc }: { mc: CenarioMonteCarlo }) {
   const linhas: { label: string; chave: keyof CenarioMonteCarlo["percentis_2030"]; pct?: boolean }[] = [
     { label: "Taxa de evasão", chave: "evasao", pct: true },
     { label: "Abates locais", chave: "abates" },
-    { label: "Exportação em pé", chave: "export" },
+    { label: "Evasão em pé", chave: "export" },
     { label: "Utilização industrial", chave: "utilizacao", pct: true },
     { label: "Empregos em risco", chave: "empregos_risco" },
   ];
@@ -166,7 +166,7 @@ function CenarioPainel({
           ))}
         </div>
         <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <Premissa label="Propensão a exportar (2030)" valor={`${est.premissas_2030.propensao_exportar_pct}%`} />
+          <Premissa label="Propensão a evadir (2030)" valor={`${est.premissas_2030.propensao_exportar_pct}%`} />
           <Premissa label="Taxa de desfrute (2030)" valor={`${est.premissas_2030.taxa_desfrute_pct}%`} />
           <Premissa label="Capacidade industrial (CAGR)" valor={`${est.premissas_2030.capacidade_cagr_pct}%/ano`} />
         </div>
@@ -282,7 +282,7 @@ export default function CenariosPage() {
     <div className="space-y-6">
       <PageHeader
         title="Cenários 2030"
-        subtitle="Projeções estruturais e probabilísticas até 2030. Em vez de taxas fixas, um modelo de estoque-fluxo da cadeia bovina (rebanho → oferta → demanda industrial → exportação) sob quatro cenários, com a incerteza das premissas propagada por Monte Carlo. O dashboard comunica faixas plausíveis, não um número pontual."
+        subtitle="Projeções estruturais e probabilísticas até 2030. Em vez de taxas fixas, um modelo de estoque-fluxo da cadeia bovina (rebanho → oferta → demanda industrial → evasão) sob quatro cenários, com a incerteza das premissas propagada por Monte Carlo. O dashboard comunica faixas plausíveis, não um número pontual."
       />
 
       <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 text-sm">
@@ -358,7 +358,7 @@ export default function CenariosPage() {
 
       <ChartCard
         title="Validação do modelo estrutural — rebanho 2015–2024"
-        description="O modelo de estoque-fluxo, alimentado com a retirada observada (abate + exportação) de cada ano, reproduz a trajetória do rebanho do IBGE."
+        description="O modelo de estoque-fluxo, alimentado com a retirada observada (abate + evasão) de cada ano, reproduz a trajetória do rebanho do IBGE."
         footer={`Erro médio absoluto percentual (MAPE) do rebanho = ${estrutural.validacao.mape_rebanho}%. Premissas: natalidade ${estrutural.parametros_base.taxa_natal_pct}%, mortalidade ${estrutural.parametros_base.taxa_mort_pct}%.`}
       >
         <ComposedTrend

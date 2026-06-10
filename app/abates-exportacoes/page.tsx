@@ -32,8 +32,8 @@ export default function AbatesExportacoesPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Abates × Exportações"
-        subtitle="Comparação direta entre o abate realizado dentro do Acre e os bovinos vivos exportados para outros estados. Quando a razão export ÷ abate se aproxima de 100%, o estado exporta quase tanto quanto abate."
+        title="Abates × Evasão"
+        subtitle="Comparação direta entre o abate realizado dentro do Acre e os bovinos vivos evadidos para outros estados. Quando a razão evasão ÷ abate se aproxima de 100%, o estado evade quase tanto quanto abate."
       />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -45,14 +45,14 @@ export default function AbatesExportacoesPage() {
           spark={anualSerie.map((r) => r.abates)}
         />
         <KpiCard
-          label="Exportação (2025)"
+          label="Evasão (2025)"
           value={fmtInt(ult.exportacoes)}
           tone="danger"
           icon={Truck}
           spark={anualSerie.map((r) => r.exportacoes)}
         />
         <KpiCard
-          label="Razão export ÷ abate (2025)"
+          label="Razão evasão ÷ abate (2025)"
           value={fmtPct(ult.razao)}
           hint="57% da produção sai viva"
           tone="warning"
@@ -62,17 +62,20 @@ export default function AbatesExportacoesPage() {
       </div>
 
       <Tabs defaultValue="anual">
-        <TabsList>
-          <TabsTrigger value="anual">Anual</TabsTrigger>
-          <TabsTrigger value="mensal">Mensal</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="anual" className="mt-4">
-          <ChartCard
-            title="Abates e exportação por ano"
-            description="Barras: volumes anuais (eixo esquerdo). Linha: razão export ÷ abate em % (eixo direito), com limiar de inversão estrutural em 100%."
-            footer="Fonte: IDAF, série consolidada 2014–2025."
-          >
+        <ChartCard
+          title="Abates e evasão"
+          action={
+            <TabsList>
+              <TabsTrigger value="anual">Anual</TabsTrigger>
+              <TabsTrigger value="mensal">Mensal</TabsTrigger>
+            </TabsList>
+          }
+        >
+          <TabsContent value="anual" className="mt-0">
+            <p className="text-muted-foreground mb-3 px-2 text-sm sm:px-1">
+              Barras: volumes anuais (eixo esquerdo). Linha: razão evasão ÷ abate
+              em % (eixo direito), com limiar de inversão estrutural em 100%.
+            </p>
             <ComposedTrend
               data={serieAno}
               xKey="ano"
@@ -80,12 +83,12 @@ export default function AbatesExportacoesPage() {
               rightAxis
               bars={[
                 { key: "Abates", name: "Abates", color: CHART.verde },
-                { key: "Exportação", name: "Exportação", color: CHART.vermelho },
+                { key: "Exportação", name: "Evasão", color: CHART.vermelho },
               ]}
               lines={[
                 {
                   key: "Razão",
-                  name: "Razão export ÷ abate (%)",
+                  name: "Razão evasão ÷ abate (%)",
                   color: CHART.azul,
                   yAxisId: "right",
                 },
@@ -102,28 +105,32 @@ export default function AbatesExportacoesPage() {
                 },
               ]}
             />
-          </ChartCard>
-        </TabsContent>
+            <p className="text-muted-foreground mt-2 px-2 text-xs sm:px-1">
+              Fonte: IDAF, série consolidada 2014–2025.
+            </p>
+          </TabsContent>
 
-        <TabsContent value="mensal" className="mt-4">
-          <ChartCard
-            title="Abates e exportação mês a mês"
-            description="Série mensal 2014–2026. A exportação interestadual ganha amplitude e sazonalidade ao longo do período."
-            footer="Fonte: IDAF — painel mensal."
-          >
+          <TabsContent value="mensal" className="mt-0">
+            <p className="text-muted-foreground mb-3 px-2 text-sm sm:px-1">
+              Série mensal 2014–2026. A evasão interestadual ganha amplitude e
+              sazonalidade ao longo do período.
+            </p>
             <ComposedTrend
               data={serieMes}
               xKey="data"
               height={380}
               areas={[
                 { key: "Abates", name: "Abates", color: CHART.verde },
-                { key: "Exportação", name: "Exportação", color: CHART.vermelho },
+                { key: "Exportação", name: "Evasão", color: CHART.vermelho },
               ]}
               leftFmt={(v) => fmtCompact(v)}
               tooltipFmt={(v) => fmtInt(v)}
             />
-          </ChartCard>
-        </TabsContent>
+            <p className="text-muted-foreground mt-2 px-2 text-xs sm:px-1">
+              Fonte: IDAF — painel mensal.
+            </p>
+          </TabsContent>
+        </ChartCard>
       </Tabs>
     </div>
   );

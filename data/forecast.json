@@ -2,7 +2,7 @@
   "atualizado_ate": "2026-04-01",
   "horizonte_meses": 24,
   "export": {
-    "variavel": "Exportação interestadual",
+    "variavel": "Evasão interestadual",
     "modelo": "Holt-Winters",
     "mae": 5099,
     "rmse": 7807,

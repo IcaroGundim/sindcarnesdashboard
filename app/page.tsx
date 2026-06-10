@@ -34,7 +34,7 @@ export default function VisaoGeralPage() {
     <div className="space-y-6">
       <PageHeader
         title="Visão Geral"
-        subtitle="A exportação interestadual de bovinos do Acre cresceu mais de 1.000% em uma década e drena, de forma crescente, a matéria-prima do abate local — comprometendo a sustentabilidade da indústria frigorífica do estado."
+        subtitle="A evasão interestadual de bovinos do Acre cresceu mais de 1.000% em uma década e drena, de forma crescente, a matéria-prima do abate local — comprometendo a sustentabilidade da indústria frigorífica do estado."
       />
 
       {/* KPIs essenciais */}
@@ -42,13 +42,13 @@ export default function VisaoGeralPage() {
         <KpiCard
           label="Taxa de evasão (2025)"
           value={fmtPct(kpi.taxa_evasao_2025)}
-          hint="export ÷ (abates + export)"
+          hint="evasão ÷ (abates + evasão)"
           tone="danger"
           icon={Percent}
           spark={anualSerie.map((r) => r.evasao)}
         />
         <KpiCard
-          label="Razão export ÷ abate (2025)"
+          label="Razão evasão ÷ abate (2025)"
           value={fmtPct(km.exp_abate_ratio_2025_pct)}
           hint="pressão sobre o abate local"
           tone="warning"
@@ -56,13 +56,14 @@ export default function VisaoGeralPage() {
           spark={anualSerie.map((r) => r.razao)}
         />
         <KpiCard
-          label="Crescimento da exportação (10 anos)"
+          label="Crescimento da evasão (10 anos)"
           value={`+${fmtInt(km.export_growth_10yr_pct)}%`}
           delta="2015 → 2025"
           trend="up"
           tone="danger"
           icon={TrendUp}
           spark={anualSerie.map((r) => r.exportacoes)}
+          sparkFmt={fmtInt}
         />
         <KpiCard
           label="Trabalhadores em frigorífico (2025)"
@@ -78,9 +79,9 @@ export default function VisaoGeralPage() {
       {/* Gráfico principal + mapa de destinos */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
       <ChartCard
-        title="Abates × Exportação × Taxa de evasão"
-        description="Volumes anuais de abate e exportação interestadual (eixo esquerdo) e a taxa de evasão (eixo direito). Limiares de alerta em 30% e 50%."
-        footer="Fonte: IDAF (abates e exportações) · evasão calculada como export ÷ (abates + export)."
+        title="Abates × Evasão × Taxa de evasão"
+        description="Volumes anuais de abate e evasão interestadual (eixo esquerdo) e a taxa de evasão (eixo direito). Limiares de alerta em 30% e 50%."
+        footer="Fonte: IDAF (abates e evasão) · evasão calculada como evasão ÷ (abates + evasão)."
       >
         <ComposedTrend
           data={serie}
@@ -91,7 +92,7 @@ export default function VisaoGeralPage() {
             { key: "Abates", name: "Abates", color: CHART.verde, stackId: "a" },
             {
               key: "Exportação",
-              name: "Exportação",
+              name: "Evasão",
               color: CHART.vermelho,
               stackId: "a",
             },
@@ -118,8 +119,8 @@ export default function VisaoGeralPage() {
 
         <ChartCard
           title="Mapa de destinos"
-          description="Estados de destino dos bovinos exportados pelo Acre, por volume recebido no ano selecionado. Arraste o slider para percorrer a linha do tempo."
-          footer="Fonte: IDAF — exportações por UF · malha IBGE 2025."
+          description="Estados de destino dos bovinos evadidos do Acre, por volume recebido no ano selecionado. Arraste o slider para percorrer a linha do tempo."
+          footer="Fonte: IDAF — evasão por UF · malha IBGE 2025."
         >
           <DestinosMapTimeline compact />
         </ChartCard>
@@ -128,9 +129,9 @@ export default function VisaoGeralPage() {
       {/* Linha inferior: destinos */}
       <div className="grid grid-cols-1 gap-6">
         <ChartCard
-          title="Destinos da exportação (acumulado)"
-          description="Participação por estado de destino dos bovinos exportados pelo Acre."
-          footer="Fonte: IDAF — exportações por UF de destino, 2014–2026."
+          title="Destinos da evasão (acumulado)"
+          description="Participação por estado de destino dos bovinos evadidos do Acre."
+          footer="Fonte: IDAF — evasão por UF de destino, 2014–2026."
         >
           <Donut
             data={donutData}

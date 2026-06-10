@@ -34,7 +34,7 @@ export const NAV: NavGroup[] = [
         description: "Indicadores executivos da sustentabilidade do abate",
       },
       {
-        title: "Abates × Exportações",
+        title: "Abates × Evasão",
         href: "/abates-exportacoes",
         icon: Scale,
         description: "Desfrute local versus drenagem interestadual",
@@ -54,7 +54,7 @@ export const NAV: NavGroup[] = [
         title: "Destinos",
         href: "/destinos",
         icon: MapPin,
-        description: "Concentração de destinos da exportação de bovinos",
+        description: "Concentração de destinos da evasão de bovinos",
       },
       {
         title: "Composição Etária",

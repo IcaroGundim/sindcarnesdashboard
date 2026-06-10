@@ -37,7 +37,7 @@ export default function DestinosPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Destinos da Exportação"
+        title="Destinos da Evasão"
         subtitle="Para onde vão os bovinos vivos que deixam o Acre. A forte concentração em Mato Grosso expõe a indústria local à dependência de um único mercado comprador e à sua política de preços."
       />
 
@@ -67,16 +67,16 @@ export default function DestinosPage() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-stretch">
         <ChartCard
-          title="Mapa de destinos da exportação"
-          description="Estados de destino dos bovinos vivos exportados pelo Acre, coloridos pelo volume recebido no ano selecionado. Quanto mais escuro, maior o volume. Arraste o slider para percorrer os anos."
-          footer="Fonte: IDAF (exportações por UF de destino, 2014-2026) - malha estadual IBGE 2025. Passe o mouse sobre um estado para ver os números."
+          title="Mapa de destinos da evasão"
+          description="Estados de destino dos bovinos vivos evadidos do Acre, coloridos pelo volume recebido no ano selecionado. Quanto mais escuro, maior o volume. Arraste o slider para percorrer os anos."
+          footer="Fonte: IDAF (evasão por UF de destino, 2014-2026) - malha estadual IBGE 2025. Passe o mouse sobre um estado para ver os números."
         >
           <DestinosMapTimeline compact mapMaxWidth={500} />
         </ChartCard>
 
         <ChartCard
           title="Evolução da participação de Mato Grosso"
-          description="Percentual do total exportado que teve Mato Grosso como destino, mês a mês (jan/2014–abr/2026)."
+          description="Percentual do total evadido que teve Mato Grosso como destino, mês a mês (jan/2014–abr/2026)."
           footer="Fonte: IDAF. Após anos de baixa participação, a concentração em MT dispara a partir de 2021–2022, superando os 60% nos meses mais recentes."
         >
           <ComposedTrend
@@ -101,8 +101,8 @@ export default function DestinosPage() {
 
       <ChartCard
         title="Ranking de destinos (acumulado)"
-        description="Total de bovinos exportados por estado de destino, 2014-2026."
-        footer="Fonte: IDAF - exportações por UF de destino."
+        description="Total de bovinos evadidos por estado de destino, 2014-2026."
+        footer="Fonte: IDAF - evasão por UF de destino."
       >
         <HBars
           data={top}
@@ -122,7 +122,7 @@ export default function DestinosPage() {
           <TableHeader>
             <TableRow>
               <TableHead>Estado</TableHead>
-              <TableHead className="text-right">Cabeças exportadas</TableHead>
+              <TableHead className="text-right">Cabeças evadidas</TableHead>
               <TableHead className="text-right">Participação</TableHead>
             </TableRow>
           </TableHeader>

@@ -214,7 +214,7 @@ export function BrazilMap({
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         className="h-auto w-full"
         role="img"
-        aria-label="Mapa de destinos da exportação de bovinos por estado"
+        aria-label="Mapa de destinos da evasão de bovinos por estado"
         onMouseLeave={() => setHovered(null)}
       >
         <BaseLayer
@@ -252,7 +252,7 @@ export function BrazilMap({
             <span className="text-muted-foreground">({hoveredGeo.sigla})</span>
           </p>
           {hoveredGeo.sigla === originUf ? (
-            <p className="text-muted-foreground">Origem da exportação</p>
+            <p className="text-muted-foreground">Origem da evasão</p>
           ) : hoveredDatum && hoveredDatum.total > 0 ? (
             <div className="space-y-0.5">
               <p>
@@ -269,7 +269,7 @@ export function BrazilMap({
               </p>
             </div>
           ) : (
-            <p className="text-muted-foreground">Sem exportação registrada</p>
+            <p className="text-muted-foreground">Sem evasão registrada</p>
           )}
         </div>
       )}
@@ -309,7 +309,7 @@ export function MapGradientLegend({
   return (
     <div className={cn("w-40", className)}>
       <p className="text-muted-foreground mb-1 text-xs font-medium">
-        Cabeças exportadas ({scope})
+        Cabeças evadidas ({scope})
       </p>
       <div
         className="h-3 w-full rounded"
@@ -326,7 +326,7 @@ export function MapGradientLegend({
   );
 }
 
-/** Chips de origem e "sem exportação". */
+/** Chips de origem e "sem evasão". */
 export function MapChips({ className }: { className?: string }) {
   return (
     <div
@@ -344,7 +344,7 @@ export function MapChips({ className }: { className?: string }) {
           className="inline-block size-3 rounded-sm border"
           style={{ background: NO_DATA }}
         />
-        <span className="text-muted-foreground">Sem exportação</span>
+        <span className="text-muted-foreground">Sem evasão</span>
       </div>
     </div>
   );
