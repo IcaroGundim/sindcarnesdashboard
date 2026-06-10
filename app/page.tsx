@@ -34,11 +34,11 @@ export default function VisaoGeralPage() {
     <div className="space-y-6">
       <PageHeader
         title="Visão Geral"
-        subtitle="A evasão interestadual de bovinos do Acre cresceu mais de 1.000% em uma década e drena, de forma crescente, a matéria-prima do abate local — comprometendo a sustentabilidade da indústria frigorífica do estado."
+        subtitle="A evasão interestadual de bovinos do Acre cresceu mais de 1.000% em uma década e drena, de forma crescente, a matéria-prima do abate local, comprometendo a sustentabilidade da indústria frigorífica do estado."
       />
 
       {/* KPIs essenciais */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid h-[133px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <KpiCard
           label="Taxa de evasão (2025)"
           value={fmtPct(kpi.taxa_evasao_2025)}
@@ -59,6 +59,7 @@ export default function VisaoGeralPage() {
           label="Crescimento da evasão (10 anos)"
           value={`+${fmtInt(km.export_growth_10yr_pct)}%`}
           delta="2015 → 2025"
+          deltaClassName="w-[106px]"
           trend="up"
           tone="danger"
           icon={TrendUp}

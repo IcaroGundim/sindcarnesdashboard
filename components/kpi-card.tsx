@@ -43,6 +43,7 @@ export function KpiCard({
   spark,
   sparkColor,
   sparkFmt: sparkFmtProp,
+  deltaClassName,
 }: {
   label: string;
   value: string;
@@ -57,6 +58,7 @@ export function KpiCard({
   // quando a unidade do `value` difere da série (ex.: KPI de crescimento em %
   // cuja mini-série mostra valores absolutos). Passe explicitamente nesses casos.
   sparkFmt?: (v: number) => string;
+  deltaClassName?: string;
 }) {
   const hasSpark = !!spark && spark.filter((v) => v != null).length > 1;
   const sparkFmt = React.useMemo(() => {
@@ -95,6 +97,7 @@ export function KpiCard({
             <span
               className={cn(
                 "inline-flex items-center gap-0.5 text-xs font-medium tabular-nums",
+                deltaClassName,
                 trend === "up" && "text-[var(--success)]",
                 trend === "down" && "text-destructive",
                 trend === "neutral" && "text-muted-foreground",

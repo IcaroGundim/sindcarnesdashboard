@@ -73,16 +73,12 @@ const STATES: StateGeo[] = fc.features.map((f) => {
 // --- Camada base (memoizada: não re-renderiza no hover) ---------------------
 interface BaseLayerProps {
   fills: Map<string, string>;
-  labelThreshold: number;
-  shares: Map<string, number>;
   originUf: string;
   onEnter: (sigla: string) => void;
 }
 
 const BaseLayer = React.memo(function BaseLayer({
   fills,
-  labelThreshold,
-  shares,
   originUf,
   onEnter,
 }: BaseLayerProps) {
@@ -103,7 +99,9 @@ const BaseLayer = React.memo(function BaseLayer({
       </g>
       <g className="pointer-events-none">
         {STATES.filter(
-          (s) => s.sigla === originUf || (shares.get(s.sigla) ?? 0) >= labelThreshold,
+          (s) =>
+            s.sigla === originUf ||
+            (fills.get(s.sigla) ?? NO_DATA) !== NO_DATA,
         ).map((s) => {
           if (!Number.isFinite(s.cx) || !Number.isFinite(s.cy)) return null;
           const fill = fills.get(s.sigla) ?? NO_DATA;
@@ -195,15 +193,8 @@ export function BrazilMap({
     return m;
   }, [byUf, max, originUf]);
 
-  const shares = React.useMemo(() => {
-    const m = new Map<string, number>();
-    for (const d of data) m.set(d.uf, d.share);
-    return m;
-  }, [data]);
-
   const hoveredGeo = hovered ? STATES.find((s) => s.sigla === hovered) : null;
   const hoveredDatum = hovered ? byUf.get(hovered) : null;
-  const labelThreshold = compact ? 6 : 4;
 
   const mapBlock = (
     <div
@@ -217,13 +208,7 @@ export function BrazilMap({
         aria-label="Mapa de destinos da evasão de bovinos por estado"
         onMouseLeave={() => setHovered(null)}
       >
-        <BaseLayer
-          fills={fills}
-          shares={shares}
-          labelThreshold={labelThreshold}
-          originUf={originUf}
-          onEnter={onEnter}
-        />
+        <BaseLayer fills={fills} originUf={originUf} onEnter={onEnter} />
 
         {/* Destaque do estado sob o cursor (um único path) */}
         {hoveredGeo && (

@@ -61,6 +61,43 @@ export function DestinosMapTimeline({ compact = true, mapMaxWidth }: Props) {
   }, [year]);
   const anoParcial = ultimoMes > 0 && ultimoMes < 12;
 
+  // Mini cards de resumo do ano selecionado. Renderizados como overlay no
+  // canto superior direito do mapa (espaço vazio) em telas largas, e em fluxo
+  // normal abaixo do slider no mobile — onde o mapa ocupa a largura toda.
+  const resumo = (
+    <>
+      <div className="bg-muted/40 rounded-lg border px-3 py-2">
+        <p className="text-foreground text-2xl font-semibold tabular-nums leading-none">
+          {fmtInt(totalAno)}
+        </p>
+        <p className="text-muted-foreground mt-1 text-[10px]">
+          cabeças evadidas em{" "}
+          <span className="text-foreground font-semibold">{year}</span>
+        </p>
+      </div>
+      {principal && (
+        <div className="overflow-hidden rounded-lg border">
+          <p className="bg-brand text-brand-foreground px-3 py-1 text-[10px] font-semibold uppercase tracking-wide">
+            Principal destino
+          </p>
+          <div className="bg-muted/40 px-3 py-2">
+            <p className="text-foreground text-sm font-semibold">
+              {principal.nome}
+            </p>
+            <p className="text-muted-foreground text-xs tabular-nums">
+              {fmtPct(principal.share)} do total
+            </p>
+          </div>
+        </div>
+      )}
+      {anoParcial && (
+        <p className="text-muted-foreground text-[11px] italic">
+          * {year} parcial — dados até {MESES[ultimoMes - 1]}.
+        </p>
+      )}
+    </>
+  );
+
   return (
     <div className="flex flex-col gap-1.5">
       {/* Wrapper de largura TOTAL do card; o mapa se centraliza sozinho
@@ -81,6 +118,12 @@ export function DestinosMapTimeline({ compact = true, mapMaxWidth }: Props) {
           className="pointer-events-none absolute bottom-12 left-0 z-10"
         />
         <MapChips className="pointer-events-none absolute right-0 bottom-12 z-10" />
+
+        {/* Overlay no canto superior direito (espaço vazio do mapa) — só em
+            telas largas, onde há folga ao lado do mapa centralizado. */}
+        <div className="absolute right-0 top-0 z-10 hidden w-40 flex-col gap-2 sm:flex">
+          {resumo}
+        </div>
       </div>
 
       <YearSlider
@@ -90,29 +133,8 @@ export function DestinosMapTimeline({ compact = true, mapMaxWidth }: Props) {
         className="-mt-1"
       />
 
-      <p className="text-muted-foreground text-xs">
-        <span className="text-foreground font-semibold tabular-nums">
-          {fmtInt(totalAno)}
-        </span>{" "}
-        cabeças evadidas em{" "}
-        <span className="text-foreground font-semibold">{year}</span>
-        {principal && (
-          <>
-            {" "}
-            · principal destino:{" "}
-            <span className="text-foreground font-medium">
-              {principal.nome} ({fmtPct(principal.share)})
-            </span>
-          </>
-        )}
-      </p>
-
-      {anoParcial && (
-        <p className="text-muted-foreground text-[11px] italic">
-          * Dados de {year} referentes somente até {MESES[ultimoMes - 1]} de{" "}
-          {year} (ano parcial).
-        </p>
-      )}
+      {/* Versão mobile: em fluxo normal, pois o mapa ocupa a largura toda. */}
+      <div className="flex flex-col gap-2 sm:hidden">{resumo}</div>
     </div>
   );
 }

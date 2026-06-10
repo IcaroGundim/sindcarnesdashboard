@@ -14,9 +14,11 @@ const useIsoLayoutEffect =
 export function SidebarNav({
   onNavigate,
   showBrand = true,
+  collapsed = false,
 }: {
   onNavigate?: () => void;
   showBrand?: boolean;
+  collapsed?: boolean;
 }) {
   const current = normalizePath(usePathname());
 
@@ -44,7 +46,9 @@ export function SidebarNav({
 
   useIsoLayoutEffect(() => {
     measure();
-  }, [measure]);
+    // Re-mede ao recolher/expandir: esconder os rótulos de grupo muda as
+    // posições verticais dos itens, então o indicador precisa reposicionar.
+  }, [measure, collapsed]);
 
   // Habilita a transição só após o primeiro posicionamento (evita o "slide"
   // inicial vindo do topo no carregamento da página).
@@ -100,9 +104,11 @@ export function SidebarNav({
 
         {NAV.map((group) => (
           <div key={group.label}>
-            <p className="text-muted-foreground px-2 pb-1.5 text-[11px] font-semibold uppercase tracking-wider">
-              {group.label}
-            </p>
+            {!collapsed && (
+              <p className="text-muted-foreground px-2 pb-1.5 text-[11px] font-semibold uppercase tracking-wider">
+                {group.label}
+              </p>
+            )}
             <ul className="space-y-0.5">
               {group.items.map((item) => {
                 const active = current === item.href;
@@ -117,15 +123,19 @@ export function SidebarNav({
                       href={item.href}
                       onClick={onNavigate}
                       aria-current={active ? "page" : undefined}
+                      title={collapsed ? item.title : undefined}
                       className={cn(
-                        "relative z-10 flex items-center gap-3 rounded-md px-2.5 py-2 text-sm font-medium transition-colors duration-150",
+                        "relative z-10 flex items-center rounded-md px-2.5 py-2 text-sm font-medium transition-colors duration-150",
+                        collapsed ? "justify-center" : "gap-3",
                         active
                           ? "text-sidebar-primary-foreground"
                           : "text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
                       )}
                     >
                       <Icon className="size-4 shrink-0 transition-transform duration-200" />
-                      <span className="truncate">{item.title}</span>
+                      {!collapsed && (
+                        <span className="truncate">{item.title}</span>
+                      )}
                     </Link>
                   </li>
                 );
@@ -136,13 +146,15 @@ export function SidebarNav({
       </nav>
 
       {/* Rodapé */}
-      <div className="border-t px-4 py-3">
-        <p className="text-muted-foreground text-[11px] leading-relaxed">
-          Diagnóstico da indústria de abate bovino do Acre
-          <br />
-          Dados 2013–2026
-        </p>
-      </div>
+      {!collapsed && (
+        <div className="border-t px-4 py-3">
+          <p className="text-muted-foreground text-[11px] leading-relaxed">
+            Diagnóstico da indústria de abate bovino do Acre
+            <br />
+            Dados 2013–2026
+          </p>
+        </div>
+      )}
     </div>
   );
 }
