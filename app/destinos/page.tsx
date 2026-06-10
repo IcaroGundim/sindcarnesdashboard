@@ -36,11 +36,6 @@ export default function DestinosPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Destinos da Evasão"
-        subtitle="Para onde vão os bovinos vivos que deixam o Acre. A forte concentração em Mato Grosso expõe a indústria local à dependência de um único mercado comprador e à sua política de preços."
-      />
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <KpiCard
           label="Destino principal (2025)"
@@ -64,6 +59,11 @@ export default function DestinosPage() {
           icon={MapTrifold}
         />
       </div>
+
+      <PageHeader
+        title="Destinos da Evasão"
+        subtitle="Para onde vão os bovinos vivos que deixam o Acre. A forte concentração em Mato Grosso expõe a indústria local à dependência de um único mercado comprador e à sua política de preços."
+      />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-stretch">
         <ChartCard

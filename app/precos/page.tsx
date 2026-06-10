@@ -23,11 +23,6 @@ export default function PrecosPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Preços & Arbitragem"
-        subtitle="Os preços do boi gordo (R$/arroba) e do bezerro (R$/cabeça) determinam o incentivo econômico. Quando a reposição (bezerro) fica cara frente ao boi gordo, cria-se um incentivo perverso para vender o animal vivo a outro estado em vez de abatê-lo localmente."
-      />
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <KpiCard
           label="Boi gordo (2025)"
@@ -54,6 +49,11 @@ export default function PrecosPage() {
           spark={serie.map((s) => s.Arbitragem)}
         />
       </div>
+
+      <PageHeader
+        title="Preços & Arbitragem"
+        subtitle="Os preços do boi gordo (R$/arroba) e do bezerro (R$/cabeça) determinam o incentivo econômico. Quando a reposição (bezerro) fica cara frente ao boi gordo, cria-se um incentivo perverso para vender o animal vivo a outro estado em vez de abatê-lo localmente."
+      />
 
       <ChartCard
         title="Boi gordo × bezerro"

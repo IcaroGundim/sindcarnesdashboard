@@ -40,11 +40,6 @@ export default function RebanhoDesfrutePage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Rebanho & Desfrute"
-        subtitle="O rebanho bovino do Acre quase dobrou desde 2015, mas a taxa de desfrute aparente — quanto do rebanho é abatido ou evadido a cada ano — permanece baixa, sinalizando um rebanho em formação e ainda subutilizado industrialmente."
-      />
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <KpiCard
           label={`Rebanho (${rebanhoUltimoAno})`}
@@ -72,6 +67,11 @@ export default function RebanhoDesfrutePage() {
           spark={serieRebanho.map((r) => r.desfrute)}
         />
       </div>
+
+      <PageHeader
+        title="Rebanho & Desfrute"
+        subtitle="O rebanho bovino do Acre quase dobrou desde 2015, mas a taxa de desfrute aparente — quanto do rebanho é abatido ou evadido a cada ano — permanece baixa, sinalizando um rebanho em formação e ainda subutilizado industrialmente."
+      />
 
       <ChartCard
         title="Rebanho e taxa de desfrute aparente"

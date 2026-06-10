@@ -28,7 +28,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   const current = ALL_ITEMS.find((i) => i.href === normalizePath(pathname));
   const headerTitle = pageHeader?.title ?? current?.title ?? "SINDICARNES Acre";
-  const headerSubtitle = pageHeader?.subtitle ?? current?.description;
 
   // Fecha o menu mobile ao trocar de rota.
   React.useEffect(() => {
@@ -84,18 +83,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <span className="text-sm font-semibold">SINDICARNES Acre</span>
           </div>
 
-          {/* Título da página (desktop) — vindo do <PageHeader> da página.
-              Título com a largura do conteúdo; subtítulo ao lado, fonte maior. */}
-          <div className="hidden min-w-0 flex-1 items-center gap-3 lg:flex">
-            <h1 className="shrink-0 text-2xl font-semibold">{headerTitle}</h1>
-            {headerSubtitle && (
-              <>
-                <span className="shrink-0 text-white/70">—</span>
-                <p className="line-clamp-2 min-w-0 text-base text-white">
-                  {headerSubtitle}
-                </p>
-              </>
-            )}
+          {/* Título da página (desktop) — vindo do <PageHeader> da página. */}
+          <div className="hidden min-w-0 flex-1 items-center lg:flex">
+            <h1 className="truncate text-2xl font-semibold">{headerTitle}</h1>
           </div>
 
           <div className="flex-1 lg:hidden" />
@@ -118,7 +108,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               onClick={() => setCollapsed((v) => !v)}
               aria-expanded={!collapsed}
               aria-label={collapsed ? "Expandir menu" : "Recolher menu"}
-              className="bg-background text-muted-foreground hover:text-foreground hover:bg-accent absolute -right-8 top-4 z-20 flex size-7 items-center justify-center rounded-full border shadow-sm transition-colors"
+              className="bg-background text-muted-foreground hover:text-foreground hover:bg-accent absolute -right-11 top-4 z-20 flex size-7 items-center justify-center rounded-full border shadow-sm transition-colors"
             >
               {collapsed ? (
                 <ChevronRight className="size-4" />

@@ -31,11 +31,6 @@ export default function AbatesExportacoesPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Abates × Evasão"
-        subtitle="Comparação direta entre o abate realizado dentro do Acre e os bovinos vivos evadidos para outros estados. Quando a razão evasão ÷ abate se aproxima de 100%, o estado evade quase tanto quanto abate."
-      />
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <KpiCard
           label="Abates (2025)"
@@ -60,6 +55,11 @@ export default function AbatesExportacoesPage() {
           spark={anualSerie.map((r) => r.razao)}
         />
       </div>
+
+      <PageHeader
+        title="Abates × Evasão"
+        subtitle="Comparação direta entre o abate realizado dentro do Acre e os bovinos vivos evadidos para outros estados. Quando a razão evasão ÷ abate se aproxima de 100%, o estado evade quase tanto quanto abate."
+      />
 
       <Tabs defaultValue="anual">
         <ChartCard

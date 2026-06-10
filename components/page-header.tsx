@@ -7,28 +7,17 @@ import { useSetPageHeader } from "@/components/layout/page-header-context";
 export function PageHeader({
   title,
   subtitle,
-  children,
 }: {
   title: string;
   subtitle?: string;
-  children?: React.ReactNode;
 }) {
-  // Publica título/subtítulo no header do topo (desktop). O bloco abaixo só
-  // aparece no mobile, onde o header não tem espaço para o texto da página.
+  // Registra o título no header do topo. O subtítulo é exibido no corpo da
+  // página, onde este componente estiver posicionado (abaixo dos KPIs).
   useSetPageHeader(title, subtitle);
 
+  if (!subtitle) return null;
   return (
-    <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between lg:hidden">
-      <div>
-        <h2 className="text-xl font-bold tracking-tight">{title}</h2>
-        {subtitle && (
-          <p className="text-muted-foreground mt-1 inline max-w-2xl text-sm">
-            {subtitle}
-          </p>
-        )}
-      </div>
-      {children && <div className="flex items-center gap-2">{children}</div>}
-    </div>
+    <p className="text-foreground text-base leading-relaxed">{subtitle}</p>
   );
 }
 

@@ -43,11 +43,6 @@ export default function ComposicaoEtariaPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Composição Etária da Evasão"
-        subtitle="O perfil dos animais que deixam o estado revela o mecanismo da drenagem: a maior parte são machos jovens (0–24 meses), que seriam abatidos localmente nos anos seguintes. Cada macho jovem evadido hoje é um abate perdido em 2–3 anos."
-      />
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <KpiCard
           label="Machos jovens na evasão (2025)"
@@ -74,6 +69,11 @@ export default function ComposicaoEtariaPage() {
           spark={serie.map((s) => s["M 0–12"] + s["M 13–24"])}
         />
       </div>
+
+      <PageHeader
+        title="Composição Etária da Evasão"
+        subtitle="O perfil dos animais que deixam o estado revela o mecanismo da drenagem: a maior parte são machos jovens (0–24 meses), que seriam abatidos localmente nos anos seguintes. Cada macho jovem evadido hoje é um abate perdido em 2–3 anos."
+      />
 
       <ChartCard
         title="Evasão por classe etária e sexo"

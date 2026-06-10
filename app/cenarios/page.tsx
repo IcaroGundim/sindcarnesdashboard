@@ -280,11 +280,6 @@ export default function CenariosPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Cenários 2030"
-        subtitle="Projeções estruturais e probabilísticas até 2030. Em vez de taxas fixas, um modelo de estoque-fluxo da cadeia bovina (rebanho → oferta → demanda industrial → evasão) sob quatro cenários, com a incerteza das premissas propagada por Monte Carlo. O dashboard comunica faixas plausíveis, não um número pontual."
-      />
-
       <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 text-sm">
         <p className="flex items-start gap-2 text-muted-foreground">
           <Warning weight="duotone" className="mt-0.5 size-4 shrink-0 text-[var(--warning)]" />
@@ -316,6 +311,11 @@ export default function CenariosPage() {
           );
         })}
       </div>
+
+      <PageHeader
+        title="Cenários 2030"
+        subtitle="Projeções estruturais e probabilísticas até 2030. Em vez de taxas fixas, um modelo de estoque-fluxo da cadeia bovina (rebanho → oferta → demanda industrial → evasão) sob quatro cenários, com a incerteza das premissas propagada por Monte Carlo. O dashboard comunica faixas plausíveis, não um número pontual."
+      />
 
       <ChartCard
         title="Comparação entre cenários — trajetória da evasão (mediana)"

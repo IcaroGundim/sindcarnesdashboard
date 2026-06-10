@@ -44,6 +44,7 @@ export function KpiCard({
   sparkColor,
   sparkFmt: sparkFmtProp,
   deltaClassName,
+  labelClassName,
 }: {
   label: string;
   value: string;
@@ -59,6 +60,7 @@ export function KpiCard({
   // cuja mini-série mostra valores absolutos). Passe explicitamente nesses casos.
   sparkFmt?: (v: number) => string;
   deltaClassName?: string;
+  labelClassName?: string;
 }) {
   const hasSpark = !!spark && spark.filter((v) => v != null).length > 1;
   const sparkFmt = React.useMemo(() => {
@@ -88,7 +90,14 @@ export function KpiCard({
 
       {/* Esquerda: dados */}
       <div className="relative z-10 flex min-w-0 flex-1 flex-col justify-center px-5">
-        <p className="text-muted-foreground text-sm font-medium">{label}</p>
+        <p
+          className={cn(
+            "text-muted-foreground text-sm font-medium",
+            labelClassName,
+          )}
+        >
+          {label}
+        </p>
         <p className="mt-2 text-2xl font-bold tracking-tight tabular-nums">
           {value}
         </p>

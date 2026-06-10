@@ -28,11 +28,6 @@ export default function EmpregoPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Emprego & Renda (RAIS)"
-        subtitle="O emprego em frigoríficos é o elo que concentra valor, salários e arrecadação dentro do estado. Enquanto a pecuária de campo mantém o quadro estável, o abate cresceu — mas depende da continuidade da oferta local de animais para se sustentar."
-      />
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <KpiCard
           label="Trabalhadores em frigorífico (2025)"
@@ -63,6 +58,11 @@ export default function EmpregoPage() {
           sparkColor={CHART.azul}
         />
       </div>
+
+      <PageHeader
+        title="Emprego & Renda (RAIS)"
+        subtitle="O emprego em frigoríficos é o elo que concentra valor, salários e arrecadação dentro do estado. Enquanto a pecuária de campo mantém o quadro estável, o abate cresceu — mas depende da continuidade da oferta local de animais para se sustentar."
+      />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <ChartCard

@@ -32,13 +32,8 @@ export default function VisaoGeralPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Visão Geral"
-        subtitle="A evasão interestadual de bovinos do Acre cresceu mais de 1.000% em uma década e drena, de forma crescente, a matéria-prima do abate local, comprometendo a sustentabilidade da indústria frigorífica do estado."
-      />
-
       {/* KPIs essenciais */}
-      <div className="grid h-[133px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid h-[106px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <KpiCard
           label="Taxa de evasão (2025)"
           value={fmtPct(kpi.taxa_evasao_2025)}
@@ -49,6 +44,7 @@ export default function VisaoGeralPage() {
         />
         <KpiCard
           label="Razão evasão ÷ abate (2025)"
+          labelClassName="w-[197px]"
           value={fmtPct(km.exp_abate_ratio_2025_pct)}
           hint="pressão sobre o abate local"
           tone="warning"
@@ -57,6 +53,7 @@ export default function VisaoGeralPage() {
         />
         <KpiCard
           label="Crescimento da evasão (10 anos)"
+          labelClassName="w-[213px] leading-[21px]"
           value={`+${fmtInt(km.export_growth_10yr_pct)}%`}
           delta="2015 → 2025"
           deltaClassName="w-[106px]"
@@ -68,14 +65,21 @@ export default function VisaoGeralPage() {
         />
         <KpiCard
           label="Trabalhadores em frigorífico (2025)"
+          labelClassName="w-[255px] leading-[17px]"
           value={fmtInt(kpi.trabalhadores_frigorifico_2025)}
           delta={fmtBRL(kpi.salario_medio_frig_2025)}
+          deltaClassName="w-[85px]"
           hint="salário médio mensal"
           tone="success"
           icon={UsersThree}
           spark={emprego.frigorifico.map((f) => f.ativos)}
         />
       </div>
+
+      <PageHeader
+        title="Visão Geral"
+        subtitle="A evasão interestadual de bovinos do Acre cresceu mais de 1.000% em uma década e drena, de forma crescente, a matéria-prima do abate local, comprometendo a sustentabilidade da indústria frigorífica do estado."
+      />
 
       {/* Gráfico principal + mapa de destinos */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
