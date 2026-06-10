@@ -7,6 +7,7 @@ import type { Feature, FeatureCollection, Geometry } from "geojson";
 
 import topoData from "@/data/br_uf.topo.json";
 import { fmtInt, fmtPct } from "@/lib/format";
+import { cn } from "@/lib/utils";
 
 const WIDTH = 480;
 const HEIGHT = 440;
@@ -142,6 +143,11 @@ interface Props {
   compact?: boolean;
   /** Largura máxima do mapa (px) no modo compact. Padrão 420. */
   mapMaxWidth?: number;
+  /** Fixa o topo da escala de cor (ex.: max global entre anos), para manter
+   *  as cores comparáveis ao trocar o ano no slider. Padrão: max dos dados. */
+  colorMaxOverride?: number;
+  /** Palavra que descreve o recorte ("acumulado" | "no ano"). */
+  legendScope?: string;
 }
 
 export function BrazilMap({
@@ -149,6 +155,8 @@ export function BrazilMap({
   originUf = "AC",
   compact = false,
   mapMaxWidth,
+  colorMaxOverride,
+  legendScope = "acumulado",
 }: Props) {
   const [hovered, setHovered] = React.useState<string | null>(null);
   const onEnter = React.useCallback((s: string) => setHovered(s), []);
@@ -161,8 +169,13 @@ export function BrazilMap({
 
   const max = React.useMemo(
     () =>
-      Math.max(1, ...data.filter((d) => d.uf !== originUf).map((d) => d.total)),
-    [data, originUf],
+      colorMaxOverride && colorMaxOverride > 0
+        ? colorMaxOverride
+        : Math.max(
+            1,
+            ...data.filter((d) => d.uf !== originUf).map((d) => d.total),
+          ),
+    [data, originUf, colorMaxOverride],
   );
 
   // Cores e shares pré-calculados por UF (só mudam com os dados).
@@ -263,11 +276,40 @@ export function BrazilMap({
     </div>
   );
 
-  // --- Legendas -------------------------------------------------------------
-  const gradientBar = (
-    <div className={compact ? "w-40" : ""}>
+  // No modo compacto, BrazilMap renderiza somente o mapa. As legendas são
+  // componentes próprios (MapGradientLegend / MapChips), posicionadas por quem
+  // consome o mapa (ver DestinosMapTimeline) — fora do container do <svg>.
+  if (compact) {
+    return mapBlock;
+  }
+
+  return (
+    <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
+      {mapBlock}
+      <div className="flex shrink-0 flex-row flex-wrap gap-4 lg:w-44 lg:flex-col">
+        <MapGradientLegend max={max} scope={legendScope} />
+        <MapChips />
+      </div>
+    </div>
+  );
+}
+
+// --- Legendas (reutilizáveis fora do mapa) ----------------------------------
+
+/** Barra de gradiente da escala de cor. `max` = topo da escala. */
+export function MapGradientLegend({
+  max,
+  scope = "acumulado",
+  className,
+}: {
+  max: number;
+  scope?: string;
+  className?: string;
+}) {
+  return (
+    <div className={cn("w-40", className)}>
       <p className="text-muted-foreground mb-1 text-xs font-medium">
-        Cabeças exportadas (acumulado)
+        Cabeças exportadas ({scope})
       </p>
       <div
         className="h-3 w-full rounded"
@@ -282,9 +324,14 @@ export function BrazilMap({
       </div>
     </div>
   );
+}
 
-  const chips = (
-    <div className="flex gap-3 text-xs sm:flex-col sm:gap-1.5">
+/** Chips de origem e "sem exportação". */
+export function MapChips({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn("flex gap-3 text-xs sm:flex-col sm:gap-1.5", className)}
+    >
       <div className="flex items-center gap-2">
         <span
           className="inline-block size-3 rounded-sm"
@@ -298,28 +345,6 @@ export function BrazilMap({
           style={{ background: NO_DATA }}
         />
         <span className="text-muted-foreground">Sem exportação</span>
-      </div>
-    </div>
-  );
-
-  if (compact) {
-    return (
-      <div className="flex flex-col gap-3">
-        {mapBlock}
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          {gradientBar}
-          {chips}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
-      {mapBlock}
-      <div className="flex shrink-0 flex-row flex-wrap gap-4 lg:w-44 lg:flex-col">
-        {gradientBar}
-        {chips}
       </div>
     </div>
   );

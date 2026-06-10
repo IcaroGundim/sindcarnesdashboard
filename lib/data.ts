@@ -97,6 +97,14 @@ export interface DestinoUf {
   share: number;
 }
 
+export interface DestinoUfAno {
+  ano: number;
+  uf: string;
+  nome: string;
+  total: number;
+  share: number;
+}
+
 export interface MtShare {
   ano: number;
   total: number;
@@ -158,6 +166,8 @@ export const serieAnual: SerieAnual[] = serieAnualRaw as SerieAnual[];
 export const painelMensal: PainelMensal[] = painelMensalRaw as PainelMensal[];
 export const destinos = destinosRaw as {
   by_uf: DestinoUf[];
+  by_uf_year: DestinoUfAno[];
+  years: number[];
   mt_share_by_year: MtShare[];
   mt_share_by_month: MtShareMes[];
   ultimo_ano: number;

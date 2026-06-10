@@ -79,6 +79,835 @@
       "share": 0.0
     }
   ],
+  "by_uf_year": [
+    {
+      "ano": 2014,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 32776,
+      "share": 71.39
+    },
+    {
+      "ano": 2014,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 6100,
+      "share": 13.29
+    },
+    {
+      "ano": 2014,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 5358,
+      "share": 11.67
+    },
+    {
+      "ano": 2014,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 862,
+      "share": 1.88
+    },
+    {
+      "ano": 2014,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 625,
+      "share": 1.36
+    },
+    {
+      "ano": 2014,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 190,
+      "share": 0.41
+    },
+    {
+      "ano": 2015,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 10533,
+      "share": 32.07
+    },
+    {
+      "ano": 2015,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 8783,
+      "share": 26.74
+    },
+    {
+      "ano": 2015,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 6407,
+      "share": 19.51
+    },
+    {
+      "ano": 2015,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 3124,
+      "share": 9.51
+    },
+    {
+      "ano": 2015,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 2483,
+      "share": 7.56
+    },
+    {
+      "ano": 2015,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 978,
+      "share": 2.98
+    },
+    {
+      "ano": 2015,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 345,
+      "share": 1.05
+    },
+    {
+      "ano": 2015,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 170,
+      "share": 0.52
+    },
+    {
+      "ano": 2015,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 18,
+      "share": 0.05
+    },
+    {
+      "ano": 2016,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 11957,
+      "share": 41.43
+    },
+    {
+      "ano": 2016,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 6803,
+      "share": 23.57
+    },
+    {
+      "ano": 2016,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 3630,
+      "share": 12.58
+    },
+    {
+      "ano": 2016,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 2511,
+      "share": 8.7
+    },
+    {
+      "ano": 2016,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 2501,
+      "share": 8.67
+    },
+    {
+      "ano": 2016,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 653,
+      "share": 2.26
+    },
+    {
+      "ano": 2016,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 490,
+      "share": 1.7
+    },
+    {
+      "ano": 2016,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 204,
+      "share": 0.71
+    },
+    {
+      "ano": 2016,
+      "uf": "RJ",
+      "nome": "RJ",
+      "total": 79,
+      "share": 0.27
+    },
+    {
+      "ano": 2016,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 35,
+      "share": 0.12
+    },
+    {
+      "ano": 2017,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 20941,
+      "share": 66.2
+    },
+    {
+      "ano": 2017,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 9567,
+      "share": 30.25
+    },
+    {
+      "ano": 2017,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 916,
+      "share": 2.9
+    },
+    {
+      "ano": 2017,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 176,
+      "share": 0.56
+    },
+    {
+      "ano": 2017,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 31,
+      "share": 0.1
+    },
+    {
+      "ano": 2018,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 39556,
+      "share": 71.14
+    },
+    {
+      "ano": 2018,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 9586,
+      "share": 17.24
+    },
+    {
+      "ano": 2018,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 4634,
+      "share": 8.33
+    },
+    {
+      "ano": 2018,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 500,
+      "share": 0.9
+    },
+    {
+      "ano": 2018,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 346,
+      "share": 0.62
+    },
+    {
+      "ano": 2018,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 331,
+      "share": 0.6
+    },
+    {
+      "ano": 2018,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 301,
+      "share": 0.54
+    },
+    {
+      "ano": 2018,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 299,
+      "share": 0.54
+    },
+    {
+      "ano": 2018,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 50,
+      "share": 0.09
+    },
+    {
+      "ano": 2019,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 51691,
+      "share": 46.31
+    },
+    {
+      "ano": 2019,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 31676,
+      "share": 28.38
+    },
+    {
+      "ano": 2019,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 11043,
+      "share": 9.89
+    },
+    {
+      "ano": 2019,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 8541,
+      "share": 7.65
+    },
+    {
+      "ano": 2019,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 3826,
+      "share": 3.43
+    },
+    {
+      "ano": 2019,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 2607,
+      "share": 2.34
+    },
+    {
+      "ano": 2019,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 1191,
+      "share": 1.07
+    },
+    {
+      "ano": 2019,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 1049,
+      "share": 0.94
+    },
+    {
+      "ano": 2020,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 119311,
+      "share": 54.15
+    },
+    {
+      "ano": 2020,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 38879,
+      "share": 17.65
+    },
+    {
+      "ano": 2020,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 22896,
+      "share": 10.39
+    },
+    {
+      "ano": 2020,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 11684,
+      "share": 5.3
+    },
+    {
+      "ano": 2020,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 11370,
+      "share": 5.16
+    },
+    {
+      "ano": 2020,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 7234,
+      "share": 3.28
+    },
+    {
+      "ano": 2020,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 5359,
+      "share": 2.43
+    },
+    {
+      "ano": 2020,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 1715,
+      "share": 0.78
+    },
+    {
+      "ano": 2020,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 1167,
+      "share": 0.53
+    },
+    {
+      "ano": 2020,
+      "uf": "BA",
+      "nome": "Bahia",
+      "total": 505,
+      "share": 0.23
+    },
+    {
+      "ano": 2020,
+      "uf": "PA",
+      "nome": "Para",
+      "total": 189,
+      "share": 0.09
+    },
+    {
+      "ano": 2020,
+      "uf": "AL",
+      "nome": "AL",
+      "total": 6,
+      "share": 0.0
+    },
+    {
+      "ano": 2021,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 31393,
+      "share": 28.98
+    },
+    {
+      "ano": 2021,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 23063,
+      "share": 21.29
+    },
+    {
+      "ano": 2021,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 16806,
+      "share": 15.51
+    },
+    {
+      "ano": 2021,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 16002,
+      "share": 14.77
+    },
+    {
+      "ano": 2021,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 14619,
+      "share": 13.5
+    },
+    {
+      "ano": 2021,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 2695,
+      "share": 2.49
+    },
+    {
+      "ano": 2021,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 1841,
+      "share": 1.7
+    },
+    {
+      "ano": 2021,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 1009,
+      "share": 0.93
+    },
+    {
+      "ano": 2021,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 749,
+      "share": 0.69
+    },
+    {
+      "ano": 2021,
+      "uf": "BA",
+      "nome": "Bahia",
+      "total": 152,
+      "share": 0.14
+    },
+    {
+      "ano": 2022,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 43177,
+      "share": 38.1
+    },
+    {
+      "ano": 2022,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 30304,
+      "share": 26.74
+    },
+    {
+      "ano": 2022,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 26902,
+      "share": 23.74
+    },
+    {
+      "ano": 2022,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 9203,
+      "share": 8.12
+    },
+    {
+      "ano": 2022,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 1218,
+      "share": 1.07
+    },
+    {
+      "ano": 2022,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 900,
+      "share": 0.79
+    },
+    {
+      "ano": 2022,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 575,
+      "share": 0.51
+    },
+    {
+      "ano": 2022,
+      "uf": "PA",
+      "nome": "Para",
+      "total": 530,
+      "share": 0.47
+    },
+    {
+      "ano": 2022,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 509,
+      "share": 0.45
+    },
+    {
+      "ano": 2023,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 41363,
+      "share": 29.07
+    },
+    {
+      "ano": 2023,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 34351,
+      "share": 24.14
+    },
+    {
+      "ano": 2023,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 33239,
+      "share": 23.36
+    },
+    {
+      "ano": 2023,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 18930,
+      "share": 13.3
+    },
+    {
+      "ano": 2023,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 7968,
+      "share": 5.6
+    },
+    {
+      "ano": 2023,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 4016,
+      "share": 2.82
+    },
+    {
+      "ano": 2023,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 2151,
+      "share": 1.51
+    },
+    {
+      "ano": 2023,
+      "uf": "BA",
+      "nome": "Bahia",
+      "total": 150,
+      "share": 0.11
+    },
+    {
+      "ano": 2023,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 110,
+      "share": 0.08
+    },
+    {
+      "ano": 2023,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 31,
+      "share": 0.02
+    },
+    {
+      "ano": 2024,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 80093,
+      "share": 36.93
+    },
+    {
+      "ano": 2024,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 45416,
+      "share": 20.94
+    },
+    {
+      "ano": 2024,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 40050,
+      "share": 18.47
+    },
+    {
+      "ano": 2024,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 19069,
+      "share": 8.79
+    },
+    {
+      "ano": 2024,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 13894,
+      "share": 6.41
+    },
+    {
+      "ano": 2024,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 12460,
+      "share": 5.74
+    },
+    {
+      "ano": 2024,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 4287,
+      "share": 1.98
+    },
+    {
+      "ano": 2024,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 1614,
+      "share": 0.74
+    },
+    {
+      "ano": 2024,
+      "uf": "PA",
+      "nome": "Para",
+      "total": 4,
+      "share": 0.0
+    },
+    {
+      "ano": 2025,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 222092,
+      "share": 58.64
+    },
+    {
+      "ano": 2025,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 81357,
+      "share": 21.48
+    },
+    {
+      "ano": 2025,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 26507,
+      "share": 7.0
+    },
+    {
+      "ano": 2025,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 18051,
+      "share": 4.77
+    },
+    {
+      "ano": 2025,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 16255,
+      "share": 4.29
+    },
+    {
+      "ano": 2025,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 8414,
+      "share": 2.22
+    },
+    {
+      "ano": 2025,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 4686,
+      "share": 1.24
+    },
+    {
+      "ano": 2025,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 1221,
+      "share": 0.32
+    },
+    {
+      "ano": 2025,
+      "uf": "PA",
+      "nome": "Para",
+      "total": 100,
+      "share": 0.03
+    },
+    {
+      "ano": 2025,
+      "uf": "RJ",
+      "nome": "RJ",
+      "total": 25,
+      "share": 0.01
+    },
+    {
+      "ano": 2026,
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "total": 84016,
+      "share": 65.37
+    },
+    {
+      "ano": 2026,
+      "uf": "SP",
+      "nome": "Sao Paulo",
+      "total": 14867,
+      "share": 11.57
+    },
+    {
+      "ano": 2026,
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "total": 10508,
+      "share": 8.18
+    },
+    {
+      "ano": 2026,
+      "uf": "RO",
+      "nome": "Rondonia",
+      "total": 7249,
+      "share": 5.64
+    },
+    {
+      "ano": 2026,
+      "uf": "PR",
+      "nome": "Parana",
+      "total": 7219,
+      "share": 5.62
+    },
+    {
+      "ano": 2026,
+      "uf": "AM",
+      "nome": "Amazonas",
+      "total": 3644,
+      "share": 2.84
+    },
+    {
+      "ano": 2026,
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "total": 740,
+      "share": 0.58
+    },
+    {
+      "ano": 2026,
+      "uf": "GO",
+      "nome": "Goias",
+      "total": 285,
+      "share": 0.22
+    },
+    {
+      "ano": 2026,
+      "uf": "RR",
+      "nome": "Roraima",
+      "total": 1,
+      "share": 0.0
+    }
+  ],
+  "years": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
   "mt_share_by_year": [
     {
       "ano": 2014,

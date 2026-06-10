@@ -142,6 +142,21 @@ def build_destinos():
         mt_share.append({"ano": int(ano), "total": int(tot), "mt": int(mt),
                          "share_mt": round(mt / tot * 100, 2)})
 
+    # total por ano e UF, com share dentro do ano (para o mapa com slider)
+    by_uf_year = []
+    for ano, grp in by_year.groupby("ano"):
+        tot_ano = float(grp["total"].sum()) or 1.0
+        rows = grp.sort_values("total", ascending=False)
+        for _, r in rows.iterrows():
+            t = float(r["total"])
+            by_uf_year.append({
+                "ano": int(ano),
+                "uf": r["uf"],
+                "nome": UF_NOMES.get(r["uf"], r["uf"]),
+                "total": int(t),
+                "share": round(t / tot_ano * 100, 2),
+            })
+
     # total por ano-mes e UF (para a serie mensal de participacao de MT)
     by_month = df.groupby(["ano", "mes", "uf"])["total"].sum().reset_index()
     pivot_m = by_month.pivot_table(index=["ano", "mes"], columns="uf",
@@ -159,6 +174,8 @@ def build_destinos():
 
     payload = {
         "by_uf": records(by_uf),
+        "by_uf_year": by_uf_year,
+        "years": [int(a) for a in sorted(pivot.index)],
         "mt_share_by_year": mt_share,
         "mt_share_by_month": mt_share_month,
         "ultimo_ano": int(pivot.index.max()),

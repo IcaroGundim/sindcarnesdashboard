@@ -7,12 +7,15 @@ import { fmtInt, fmtPct, fmtCompact, fmtBRL } from "@/lib/format";
 import { KpiCard } from "@/components/kpi-card";
 import { PageHeader, ChartCard } from "@/components/page-header";
 import { ComposedTrend, Donut } from "@/components/charts/charts";
-import { BrazilMap } from "@/components/charts/brazil-map";
+import { DestinosMapTimeline } from "@/components/charts/destinos-map-timeline";
 
 export default function VisaoGeralPage() {
   const km = executive.key_metrics;
 
-  const serie = anual.map((r) => ({
+  // 2013 não possui dados auxiliares (exportação, evasão) — removido das séries
+  const anualSerie = anual.filter((r) => r.ano >= 2014);
+
+  const serie = anualSerie.map((r) => ({
     ano: r.ano,
     Abates: r.abates,
     Exportação: r.exportacoes,
@@ -42,7 +45,7 @@ export default function VisaoGeralPage() {
           hint="export ÷ (abates + export)"
           tone="danger"
           icon={Percent}
-          spark={anual.map((r) => r.evasao)}
+          spark={anualSerie.map((r) => r.evasao)}
         />
         <KpiCard
           label="Razão export ÷ abate (2025)"
@@ -50,7 +53,7 @@ export default function VisaoGeralPage() {
           hint="pressão sobre o abate local"
           tone="warning"
           icon={Scales}
-          spark={anual.map((r) => r.razao)}
+          spark={anualSerie.map((r) => r.razao)}
         />
         <KpiCard
           label="Crescimento da exportação (10 anos)"
@@ -59,7 +62,7 @@ export default function VisaoGeralPage() {
           trend="up"
           tone="danger"
           icon={TrendUp}
-          spark={anual.map((r) => r.exportacoes)}
+          spark={anualSerie.map((r) => r.exportacoes)}
         />
         <KpiCard
           label="Trabalhadores em frigorífico (2025)"
@@ -99,6 +102,8 @@ export default function VisaoGeralPage() {
               name: "Taxa de evasão (%)",
               color: CHART.azul,
               yAxisId: "right",
+              labels: true,
+              labelFmt: (v) => `${v}%`,
             },
           ]}
           leftFmt={(v) => fmtCompact(v)}
@@ -113,10 +118,10 @@ export default function VisaoGeralPage() {
 
         <ChartCard
           title="Mapa de destinos"
-          description="Estados de destino dos bovinos exportados pelo Acre, por volume acumulado recebido."
+          description="Estados de destino dos bovinos exportados pelo Acre, por volume recebido no ano selecionado. Arraste o slider para percorrer a linha do tempo."
           footer="Fonte: IDAF — exportações por UF · malha IBGE 2025."
         >
-          <BrazilMap data={destinos.by_uf} compact />
+          <DestinosMapTimeline compact />
         </ChartCard>
       </div>
 

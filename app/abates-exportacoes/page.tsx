@@ -9,7 +9,10 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Scales, Truck, Percent } from "@phosphor-icons/react";
 
 export default function AbatesExportacoesPage() {
-  const serieAno = anual.map((r) => ({
+  // 2013 não possui dados auxiliares (exportação, razão) — removido das séries
+  const anualSerie = anual.filter((r) => r.ano >= 2014);
+
+  const serieAno = anualSerie.map((r) => ({
     ano: r.ano,
     Abates: r.abates,
     Exportação: r.exportacoes,
@@ -39,14 +42,14 @@ export default function AbatesExportacoesPage() {
           value={fmtInt(ult.abates)}
           tone="success"
           icon={Scales}
-          spark={anual.map((r) => r.abates)}
+          spark={anualSerie.map((r) => r.abates)}
         />
         <KpiCard
           label="Exportação (2025)"
           value={fmtInt(ult.exportacoes)}
           tone="danger"
           icon={Truck}
-          spark={anual.map((r) => r.exportacoes)}
+          spark={anualSerie.map((r) => r.exportacoes)}
         />
         <KpiCard
           label="Razão export ÷ abate (2025)"
@@ -54,7 +57,7 @@ export default function AbatesExportacoesPage() {
           hint="57% da produção sai viva"
           tone="warning"
           icon={Percent}
-          spark={anual.map((r) => r.razao)}
+          spark={anualSerie.map((r) => r.razao)}
         />
       </div>
 
@@ -68,7 +71,7 @@ export default function AbatesExportacoesPage() {
           <ChartCard
             title="Abates e exportação por ano"
             description="Barras: volumes anuais (eixo esquerdo). Linha: razão export ÷ abate em % (eixo direito), com limiar de inversão estrutural em 100%."
-            footer="Fonte: IDAF, série consolidada 2013–2025."
+            footer="Fonte: IDAF, série consolidada 2014–2025."
           >
             <ComposedTrend
               data={serieAno}

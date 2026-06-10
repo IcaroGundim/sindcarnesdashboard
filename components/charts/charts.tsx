@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Cell,
   ComposedChart,
+  LabelList,
   Legend,
   Line,
   Pie,
@@ -99,6 +100,12 @@ export interface SeriesDef {
   yAxisId?: "left" | "right";
   dashed?: boolean;
   type?: "monotone" | "linear";
+  /** Mostra o valor de cada ponto sobre a linha. */
+  labels?: boolean;
+  /** Formatação dos rótulos (default: valor cru). */
+  labelFmt?: Fmt;
+  /** Cor dos rótulos (default: escura, alto contraste). */
+  labelColor?: string;
 }
 
 export function ComposedTrend({
@@ -231,9 +238,30 @@ export function ComposedTrend({
               stroke={s.color}
               strokeWidth={2.5}
               strokeDasharray={s.dashed ? "5 4" : undefined}
-              dot={false}
+              dot={s.labels ? { r: 2.5, fill: s.color, strokeWidth: 0 } : false}
               connectNulls
-            />
+            >
+              {s.labels && (
+                <LabelList
+                  dataKey={s.key}
+                  position="top"
+                  offset={8}
+                  fill={s.labelColor ?? "#0f172a"}
+                  fontSize={10}
+                  fontWeight={700}
+                  formatter={
+                    s.labelFmt
+                      ? (v) => {
+                          const n = typeof v === "number" ? v : Number(v);
+                          return v == null || Number.isNaN(n)
+                            ? ""
+                            : s.labelFmt!(n);
+                        }
+                      : undefined
+                  }
+                />
+              )}
+            </Line>
           ))}
         </ComposedChart>
       </ResponsiveContainer>

@@ -103,3 +103,76 @@
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }
+
+/* Slider de linha do tempo (year-slider.tsx). Trilho preenchido ate --pct
+   com a cor da marca; restante neutro. Thumb branco com anel da marca. */
+.year-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+}
+.year-slider:focus {
+  outline: none;
+}
+.year-slider::-webkit-slider-runnable-track {
+  height: 9px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--brand) 0%,
+    var(--brand) var(--pct, 0%),
+    var(--secondary) var(--pct, 0%),
+    var(--secondary) 100%
+  );
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.year-slider::-moz-range-track {
+  height: 9px;
+  border-radius: 9999px;
+  background: var(--secondary);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.year-slider::-moz-range-progress {
+  height: 9px;
+  border-radius: 9999px;
+  background: var(--brand);
+}
+.year-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -3px;
+  height: 15px;
+  width: 15px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 4px solid var(--brand);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+.year-slider::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 4px solid var(--brand);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+}
+.year-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.08);
+}
+.year-slider:active::-webkit-slider-thumb {
+  transform: scale(1.18);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.4);
+}
+.year-slider:hover::-moz-range-thumb,
+.year-slider:active::-moz-range-thumb {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.4);
+}
+.year-slider:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}

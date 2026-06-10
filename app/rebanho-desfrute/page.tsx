@@ -8,7 +8,10 @@ import { KpiCard } from "@/components/kpi-card";
 import { Cow, Pulse, TrendUp } from "@phosphor-icons/react";
 
 export default function RebanhoDesfrutePage() {
-  const serie = anual.map((r) => ({
+  // 2013 não possui dados auxiliares (desfrute) — removido das séries
+  const anualSerie = anual.filter((r) => r.ano >= 2014);
+
+  const serie = anualSerie.map((r) => ({
     ano: r.ano,
     Rebanho: r.rebanho,
     Desfrute: r.desfrute,
@@ -30,7 +33,7 @@ export default function RebanhoDesfrutePage() {
           hint="cabeças"
           tone="success"
           icon={Cow}
-          spark={anual.map((r) => r.rebanho)}
+          spark={anualSerie.map((r) => r.rebanho)}
         />
         <KpiCard
           label="Crescimento do rebanho"
@@ -39,14 +42,14 @@ export default function RebanhoDesfrutePage() {
           trend="up"
           tone="success"
           icon={TrendUp}
-          spark={anual.map((r) => r.rebanho)}
+          spark={anualSerie.map((r) => r.rebanho)}
         />
         <KpiCard
           label="Taxa de desfrute (2025)"
           value={fmtPct(desfrute2025)}
           hint="(abates + export) ÷ rebanho"
           icon={Pulse}
-          spark={anual.map((r) => r.desfrute)}
+          spark={anualSerie.map((r) => r.desfrute)}
         />
       </div>
 

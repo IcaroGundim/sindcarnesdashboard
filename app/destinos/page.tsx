@@ -4,7 +4,7 @@ import { destinos, kpi, CHART } from "@/lib/data";
 import { fmtInt, fmtPct, fmtMesAno } from "@/lib/format";
 import { PageHeader, ChartCard } from "@/components/page-header";
 import { HBars, ComposedTrend } from "@/components/charts/charts";
-import { BrazilMap } from "@/components/charts/brazil-map";
+import { DestinosMapTimeline } from "@/components/charts/destinos-map-timeline";
 import { KpiCard } from "@/components/kpi-card";
 import { MapPin, TrendUp, ChartBar, MapTrifold } from "@phosphor-icons/react";
 import {
@@ -68,10 +68,10 @@ export default function DestinosPage() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-stretch">
         <ChartCard
           title="Mapa de destinos da exportação"
-          description="Estados de destino dos bovinos vivos exportados pelo Acre, coloridos pelo volume acumulado recebido. Quanto mais escuro, maior o volume."
+          description="Estados de destino dos bovinos vivos exportados pelo Acre, coloridos pelo volume recebido no ano selecionado. Quanto mais escuro, maior o volume. Arraste o slider para percorrer os anos."
           footer="Fonte: IDAF (exportações por UF de destino, 2014-2026) - malha estadual IBGE 2025. Passe o mouse sobre um estado para ver os números."
         >
-          <BrazilMap data={destinos.by_uf} compact mapMaxWidth={500} />
+          <DestinosMapTimeline compact mapMaxWidth={500} />
         </ChartCard>
 
         <ChartCard
